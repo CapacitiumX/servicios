@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapacitiumX</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        .buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .description {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CapacitiumX</h1>
+</header>
+
+<div class="buttons">
+    <button>Quiénes somos</button>
+    <button>Ubicación</button>
+    <button>Medios de contacto</button>
+    <button>Agradecimientos</button>
+    <button>Biografía</button>
+</div>
+
+<div class="image-container">
+    <img src="https://via.placeholder.com/800x400.png?text=Imagen+de+Ventas+Consultivas" alt="Imagen de Ventas Consultivas" width="800">
+</div>
+
+<div class="description">
+    <h2>Sobre nosotros</h2>
+    <p>En CapacitiumX, nos dedicamos a ofrecer formación especializada en ventas consultivas, brindando herramientas y técnicas que permiten a los profesionales y empresas mejorar su rendimiento en el área comercial. Nuestro enfoque se centra en desarrollar habilidades de escucha activa, identificación de necesidades y establecimiento de relaciones sólidas con los clientes. A través de nuestros cursos, nuestros participantes aprenderán a realizar diagnósticos precisos que los ayudarán a ofrecer soluciones efectivas, aumentando así la satisfacción del cliente y las oportunidades de negocio. Con un equipo de expertos en ventas y un plan de estudios dinámico, CapacitiumX es tu aliado en el camino hacia el éxito comercial.</p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Monterrey, Nuevo León, México</p>
+</footer>
+
+</body>
+</html>
