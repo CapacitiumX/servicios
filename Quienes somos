@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - CapacitiumX</title>
+    <style>
+        body {
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .description {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: justify;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Quiénes Somos</h1>
+</header>
+
+<div class="image-container">
+    <img src="https://via.placeholder.com/800x400.png?text=Imagen+de+Quienes+Somos" alt="Imagen de Quiénes Somos" width="800">
+</div>
+
+<div class="description">
+    <h2>Sobre CapacitiumX</h2>
+    <p>En CapacitiumX, somos una empresa 100% regiomontana comprometida con la excelencia en el área de ventas. Nos dedicamos a capacitar a profesionales y empresas para que logren un desempeño sobresaliente en sus estrategias comerciales. Con un enfoque centrado en el cliente, trabajamos para mejorar las habilidades de comunicación, persuasión y negociación de nuestros participantes. Nuestro equipo de expertos está formado por profesionales con un profundo conocimiento del mercado, lo que nos permite ofrecer un contenido relevante y actualizado.</p>
+    <p>A lo largo de nuestra trayectoria, hemos desarrollado una metodología única que combina teoría y práctica, asegurando que nuestros alumnos no solo aprendan, sino que también apliquen lo que han aprendido en situaciones reales. Creemos firmemente en la formación continua y en el poder de las ventas consultivas como una herramienta esencial para el éxito empresarial. Nuestro objetivo es ayudar a nuestros clientes a alcanzar sus metas y optimizar su rendimiento a través de nuestras capacitaciones personalizadas y dinámicas.</p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Monterrey, Nuevo León, México</p>
+</footer>
+
+</body>
+</html>
