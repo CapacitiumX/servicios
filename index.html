@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+          <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -23,10 +24,26 @@
             max-width: 150px;
             height: auto;
         }
+        nav {
+            background-color: #34495e;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #16a085;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #1abc9c;
+        }
         main {
             padding: 20px;
         }
-        .quien-somos {
+        .quien-somos, .biografia, .contacto, .ubicacion {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -40,9 +57,21 @@
             color: #fff;
             margin-top: 20px;
         }
+        .audio-player {
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="#Quiénes somos.html">¿Quiénes Somos?</a>
+        <a href="#Biografía.html">Biografía</a>
+        <a href="#Contacto.html">Medios de Contacto</a>
+        <a href="#Ubicacion.html">Ubicación</a>
+    </nav>
 
     <!-- Encabezado con logo -->
     <header>
@@ -52,7 +81,8 @@
 
     <!-- Sección principal de contenido -->
     <main>
-        <section class="quien-somos">
+        <!-- Sección ¿Quiénes Somos? -->
+        <section class="quien-somos" id="quien-somos">
             <h2>¿Quiénes Somos?</h2>
             <p>
                 Somos una empresa 100% regiomontana, fundada en el año 2024, con el compromiso de ofrecer soluciones educativas innovadoras. Nos especializamos en la venta de cursos en línea, tutoriales y consultorías personalizadas que permiten a nuestros clientes mejorar sus habilidades y competencias en diversas áreas del conocimiento.
@@ -67,6 +97,51 @@
                 En resumen, somos un equipo comprometido, responsable y con una visión clara de crecimiento y aprendizaje continuo, y estamos listos para acompañarte en tu camino hacia el éxito.
             </p>
         </section>
+
+        <!-- Sección Biografía -->
+        <section class="biografia" id="biografia">
+            <h2>Biografía</h2>
+            <p>
+                Nuestra empresa fue fundada en el año 2024, en Monterrey, Nuevo León. Desde sus inicios, hemos tenido como objetivo principal brindar un servicio de calidad en la formación de individuos y empresas. Gracias a nuestra dedicación y enfoque en el aprendizaje práctico, hemos logrado posicionarnos como líderes en la capacitación online en diversas áreas.
+            </p>
+            <p>
+                Nos enorgullece ser una empresa que crece junto con sus clientes, proporcionando no solo formación académica, sino también acompañamiento personalizado a lo largo de todo el proceso de aprendizaje.
+            </p>
+        </section>
+
+        <!-- Sección Medios de Contacto -->
+        <section class="contacto" id="contacto">
+            <h2>Medios de Contacto</h2>
+            <p>
+                Para consultas o más información sobre nuestros cursos y servicios, puedes contactarnos a través de los siguientes medios:
+            </p>
+            <ul>
+                <li>Email: contacto@empresa.com</li>
+                <li>Teléfono: +52 55 1234 5678</li>
+                <li>Redes sociales: <a href="https://facebook.com/empresa" target="_blank">Facebook</a>, <a href="https://twitter.com/empresa" target="_blank">Twitter</a></li>
+            </ul>
+        </section>
+
+        <!-- Sección Ubicación -->
+        <section class="ubicacion" id="ubicacion">
+            <h2>Ubicación</h2>
+            <p>
+                Nos encontramos ubicados en el corazón de Monterrey, Nuevo León, México. Aquí podrás visitarnos para recibir atención personalizada o participar en nuestras capacitaciones presenciales. 
+            </p>
+            <p>
+                Dirección: Calle Ejemplo 123, Col. Centro, Monterrey, Nuevo León.
+            </p>
+            <!-- Puedes agregar un mapa interactivo o una imagen aquí si lo deseas -->
+        </section>
+
+        <!-- Reproductor de audio -->
+        <section class="audio-player">
+            <h3>Escucha nuestro mensaje</h3>
+            <audio controls>
+                <source src="prims.mp3" type="audio/mp3">
+                Tu navegador no soporta el formato de audio.
+            </audio>
+        </section>
     </main>
 
     <!-- Pie de página con derechos reservados -->
@@ -76,6 +151,3 @@
 
 </body>
 </html>
-
-      
-   
