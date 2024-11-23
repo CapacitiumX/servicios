@@ -3,69 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapacitiumX</title>
+    <title>Bienvenidos a Nuestra Página</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
+        /* Estilos básicos */
         body {
-            background-color: aqua;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
         header {
+            background-color: #2c3e50;
+            padding: 20px;
             text-align: center;
+            color: #fff;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+        main {
             padding: 20px;
         }
-        .buttons {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .buttons button {
-            margin: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .description {
-            max-width: 800px;
-            margin: 0 auto;
+        .quien-somos {
+            background-color: #fff;
             padding: 20px;
-            text-align: justify;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
         footer {
             text-align: center;
             padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-<!-- Reproductor de audio con la ruta correcta -->
-<audio autoplay loop controls>
-    <source src="Principal/prism.mp3" type="audio/mp3">
-    <source src="Principal/prism.ogg" type="audio/ogg">
-    Tu navegador no soporta la etiqueta de audio.
-</audio>
+    <!-- Encabezado con logo -->
+    <header>
+        <img src="logo_capa.jpeg" alt="Logo de la Empresa">
+        <h1>Bienvenidos a Nuestra Empresa</h1>
+    </header>
 
-<header>
-    <h1>CapacitiumX</h1>
-</header>
+    <!-- Sección principal de contenido -->
+    <main>
+        <section class="quien-somos">
+            <h2>¿Quiénes Somos?</h2>
+            <p>
+                Somos una empresa 100% regiomontana, fundada en el año 2024, con el compromiso de ofrecer soluciones educativas innovadoras. Nos especializamos en la venta de cursos en línea, tutoriales y consultorías personalizadas que permiten a nuestros clientes mejorar sus habilidades y competencias en diversas áreas del conocimiento.
+            </p>
+            <p>
+                Desde nuestra sede en Monterrey, Nuevo León, nos enfocamos en brindar contenido de calidad, creado por expertos en cada área, para garantizar una experiencia de aprendizaje efectiva y accesible desde cualquier lugar. Además, nuestra empresa se distingue por su responsabilidad social y compromiso con la excelencia en todos nuestros servicios.
+            </p>
+            <p>
+                Nuestro objetivo es empoderar a nuestros clientes, proporcionarles las herramientas necesarias para el desarrollo de sus habilidades y ofrecer soluciones a medida para empresas y particulares que buscan crecer y mejorar. Con el respaldo de años de experiencia y una visión clara hacia el futuro, estamos convencidos de que podemos contribuir a un mundo más preparado y capacitado.
+            </p>
+            <p>
+                En resumen, somos un equipo comprometido, responsable y con una visión clara de crecimiento y aprendizaje continuo, y estamos listos para acompañarte en tu camino hacia el éxito.
+            </p>
+        </section>
+    </main>
 
-<div class="buttons">
-    <a href="Quienes somos.html"><button>¿Quiénes somos?</button></a>
-    <a href="Bio.html"><button>Biografía</button></a>
-    <a href="Productos y Servicios.html"><button>Productos y Servicios</button></a>
-    <a href="Medios de contacto.html"><button>Medios de contacto</button></a>
-    <a href="Ubicación.html"><button>Ubicación</button></a>
-</div>
+    <!-- Pie de página con derechos reservados -->
+    <footer>
+        <p>&copy; Derechos Reservados - Monterrey, Nuevo León 2024</p>
+    </footer>
 
-<div class="image-container">
-    <img src="logo capa.jpeg" alt="Imagen de Ventas Cons
+</body>
+</html>
 
       
    
