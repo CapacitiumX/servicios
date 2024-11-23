@@ -1,10 +1,9 @@
-
-          <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenidos a Nuestra Página</title>
+    <title>Capacit X - Inicio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos básicos */
@@ -13,6 +12,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            text-align: center;
         }
         header {
             background-color: #2c3e50;
@@ -21,127 +21,50 @@
             color: #fff;
         }
         header img {
-            max-width: 150px;
+            max-width: 200px;
             height: auto;
         }
-        nav {
-            background-color: #34495e;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            background-color: #16a085;
-            border-radius: 5px;
-        }
-        nav a:hover {
-            background-color: #1abc9c;
-        }
         main {
-            padding: 20px;
-        }
-        .Quienes somos, .Biografía, .Medios de contacto, .Ubicación {
+            padding: 40px;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
         }
         footer {
             text-align: center;
             padding: 10px;
             background-color: #2c3e50;
             color: #fff;
-            margin-top: 20px;
-        }
-        .audio-player {
-            margin-top: 20px;
-            text-align: center;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Barra de navegación -->
-    <nav>
-        <a href="Quienes somos.html">¿Quiénes Somos?</a>
-        <a href="Bio.html">Biografía</a>
-        <a href="Medios de contacto.html">Medios de Contacto</a>
-        <a href="Ubicación.html">Ubicación</a>
-    </nav>
-
     <!-- Encabezado con logo -->
     <header>
-        <img src="logo capa.jpeg" alt="Logo de la Empresa">
-        <h1>Bienvenidos a Nuestra Empresa</h1>
+        <img src="logo_capa.jpeg" alt="Logo de Capacit X">
     </header>
 
-    <!-- Sección principal de contenido -->
+    <!-- Sección principal con información sobre la empresa -->
     <main>
-        <!-- Sección ¿Quiénes Somos? -->
-        <section class="Quienes somos" id="quien-somos">
-            <h2>¿Quiénes Somos?</h2>
-            <p>
-                Somos una empresa 100% regiomontana, fundada en el año 2024, con el compromiso de ofrecer soluciones educativas innovadoras. Nos especializamos en la venta de cursos en línea, tutoriales y consultorías personalizadas que permiten a nuestros clientes mejorar sus habilidades y competencias en diversas áreas del conocimiento.
-            </p>
-            <p>
-                Desde nuestra sede en Monterrey, Nuevo León, nos enfocamos en brindar contenido de calidad, creado por expertos en cada área, para garantizar una experiencia de aprendizaje efectiva y accesible desde cualquier lugar. Además, nuestra empresa se distingue por su responsabilidad social y compromiso con la excelencia en todos nuestros servicios.
-            </p>
-            <p>
-                Nuestro objetivo es empoderar a nuestros clientes, proporcionarles las herramientas necesarias para el desarrollo de sus habilidades y ofrecer soluciones a medida para empresas y particulares que buscan crecer y mejorar. Con el respaldo de años de experiencia y una visión clara hacia el futuro, estamos convencidos de que podemos contribuir a un mundo más preparado y capacitado.
-            </p>
-            <p>
-                En resumen, somos un equipo comprometido, responsable y con una visión clara de crecimiento y aprendizaje continuo, y estamos listos para acompañarte en tu camino hacia el éxito.
-            </p>
-        </section>
-
-        <!-- Sección Biografía -->
-        <section class="biografia" id="biografia">
-            <h2>Biografía</h2>
-            <p>
-                Nuestra empresa fue fundada en el año 2024, en Monterrey, Nuevo León. Desde sus inicios, hemos tenido como objetivo principal brindar un servicio de calidad en la formación de individuos y empresas. Gracias a nuestra dedicación y enfoque en el aprendizaje práctico, hemos logrado posicionarnos como líderes en la capacitación online en diversas áreas.
-            </p>
-            <p>
-                Nos enorgullece ser una empresa que crece junto con sus clientes, proporcionando no solo formación académica, sino también acompañamiento personalizado a lo largo de todo el proceso de aprendizaje.
-            </p>
-        </section>
-
-        <!-- Sección Medios de Contacto -->
-        <section class="contacto" id="contacto">
-            <h2>Medios de Contacto</h2>
-            <p>
-                Para consultas o más información sobre nuestros cursos y servicios, puedes contactarnos a través de los siguientes medios:
-            </p>
-            <ul>
-                <li>Email: contacto@empresa.com</li>
-                <li>Teléfono: +52 55 1234 5678</li>
-                <li>Redes sociales: <a href="https://facebook.com/empresa" target="_blank">Facebook</a>, <a href="https://twitter.com/empresa" target="_blank">Twitter</a></li>
-            </ul>
-        </section>
-
-        <!-- Sección Ubicación -->
-        <section class="ubicacion" id="ubicacion">
-            <h2>Ubicación</h2>
-            <p>
-                Nos encontramos ubicados en el corazón de Monterrey, Nuevo León, México. Aquí podrás visitarnos para recibir atención personalizada o participar en nuestras capacitaciones presenciales. 
-            </p>
-            <p>
-                Dirección: Calle Ejemplo 123, Col. Centro, Monterrey, Nuevo León.
-            </p>
-            <!-- Puedes agregar un mapa interactivo o una imagen aquí si lo deseas -->
-        </section>
-
-        <!-- Reproductor de audio -->
-        <section class="audio-player">
-            <h3>Escucha nuestro mensaje</h3>
-            <audio controls>
-                <source src="prims.mp3" type="audio/mp3">
-                Tu navegador no soporta el formato de audio.
-            </audio>
-        </section>
+        <h2>Acerca de Capacit X</h2>
+        <p>
+            Bienvenidos a Capacit X, una empresa 100% regiomontana fundada en el año 2024, con la misión de ofrecer soluciones educativas innovadoras que ayuden a las personas y empresas a desarrollarse en el mundo digital. 
+        </p>
+        <p>
+            En Capacit X nos especializamos en la creación y comercialización de cursos en línea y consultorías personalizadas que abarcan una amplia gama de temas y habilidades. Nuestra visión es transformar la educación y la capacitación mediante el uso de plataformas accesibles y flexibles que permitan a nuestros clientes aprender a su propio ritmo, desde cualquier lugar y en cualquier momento.
+        </p>
+        <p>
+            Estamos comprometidos con la excelencia, la responsabilidad social y el crecimiento continuo. En Capacit X creemos en la educación como una herramienta poderosa para el cambio y el desarrollo personal y profesional. Nos enorgullece ofrecer contenido educativo de alta calidad, impartido por expertos en sus áreas, y diseñado para brindar una experiencia de aprendizaje práctica y efectiva.
+        </p>
+        <p>
+            Nuestra sede en Monterrey, Nuevo León, nos ha permitido crecer con una base sólida y ser un referente de confianza para nuestros clientes. Nos caracterizamos por ser una empresa responsable, comprometida con el éxito de quienes confían en nosotros. Nos dedicamos a empoderar a individuos y empresas con las habilidades necesarias para enfrentar los retos del futuro.
+        </p>
+        <p>
+            En resumen, en Capacit X nos apasiona brindar soluciones educativas que marquen la diferencia. Estamos aquí para acompañarte en tu proceso de aprendizaje, siempre con un enfoque en la calidad y la mejora constante.
+        </p>
     </main>
 
     <!-- Pie de página con derechos reservados -->
