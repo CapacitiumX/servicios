@@ -105,20 +105,32 @@
     <script type="text/javascript">
         // Función para incrementar visitas
         function incrementarVisitas() {
-            let visitas = localStorage.getItem("contadorVisitas");
+            // Verificar si ya has visitado el sitio antes desde tu computadora
+            const esMiVisita = localStorage.getItem("esMiVisita");
 
-            if (visitas === null) {
-                // Si no existe el contador, inicializa a 1
-                localStorage.setItem("contadorVisitas", 1);
-                visitas = 1;
+            // Si no es tu visita, se incrementa el contador
+            if (!esMiVisita) {
+                let visitas = localStorage.getItem("contadorVisitas");
+
+                if (visitas === null) {
+                    // Si no existe el contador, inicializa a 1
+                    localStorage.setItem("contadorVisitas", 1);
+                    visitas = 1;
+                } else {
+                    // Si ya existe, incrementa el contador
+                    visitas = parseInt(visitas) + 1;
+                    localStorage.setItem("contadorVisitas", visitas);
+                }
+
+                // Muestra el contador en la página
+                document.getElementById("contador").innerText = "Número de visitas: " + visitas;
+
+                // Marca esta visita como "tuya" para no contarla la próxima vez
+                localStorage.setItem("esMiVisita", "true");
             } else {
-                // Si ya existe, incrementa el contador
-                visitas = parseInt(visitas) + 1;
-                localStorage.setItem("contadorVisitas", visitas);
+                // Si es tu visita, no se incrementa el contador
+                document.getElementById("contador").innerText = "Número de visitas: " + localStorage.getItem("contadorVisitas");
             }
-
-            // Muestra el contador en la página
-            document.getElementById("contador").innerText = "Número de visitas: " + visitas;
         }
 
         // Ejecutar la función de incremento al cargar la página
