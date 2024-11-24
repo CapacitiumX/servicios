@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapacitiumX - Inicio</title>
+    <title>Capacit X - Inicio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos básicos */
@@ -101,39 +101,33 @@
         </div>
     </main>
 
+    <!-- Música de fondo -->
+    <audio autoplay loop>
+        <source src="prism.mp3" type="audio/mp3">
+        Tu navegador no soporta el formato de audio.
+    </audio>
+
     <!-- Script para el contador de visitas -->
     <script type="text/javascript">
         // Función para incrementar visitas
         function incrementarVisitas() {
-            // Verificar si ya has visitado el sitio antes desde tu computadora
-            const esMiVisita = localStorage.getItem("esMiVisita");
+            let visitas = localStorage.getItem("contadorVisitas");
 
-            // Si no es tu visita, se incrementa el contador
-            if (!esMiVisita) {
-                let visitas = localStorage.getItem("contadorVisitas");
-
-                if (visitas === null) {
-                    // Si no existe el contador, inicializa a 1
-                    localStorage.setItem("contadorVisitas", 1);
-                    visitas = 1;
-                } else {
-                    // Si ya existe, incrementa el contador
-                    visitas = parseInt(visitas) + 1;
-                    localStorage.setItem("contadorVisitas", visitas);
-                }
-
-                // Muestra el contador en la página
-                document.getElementById("contador").innerText = "Número de visitas: " + visitas;
-
-                // Marca esta visita como "tuya" para no contarla la próxima vez
-                localStorage.setItem("esMiVisita", "true");
+            if (visitas === null) {
+                // Si no existe el contador, inicializa a 1
+                localStorage.setItem("contadorVisitas", 1);
+                visitas = 1;
             } else {
-                // Si es tu visita, no se incrementa el contador
-                document.getElementById("contador").innerText = "Número de visitas: " + localStorage.getItem("contadorVisitas");
+                // Si ya existe, incrementa el contador
+                visitas = parseInt(visitas) + 1;
+                localStorage.setItem("contadorVisitas", visitas);
             }
+
+            // Muestra el contador en la página
+            document.getElementById("contador").innerText = "Número de visitas: " + visitas;
         }
 
-        // Ejecutar la función de incremento al cargar la página
+        // Ejecuta la función de incremento al cargar la página
         window.onload = incrementarVisitas;
     </script>
 
