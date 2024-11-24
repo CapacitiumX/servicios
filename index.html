@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capacit X - Inicio</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos básicos */
         body {
@@ -64,11 +63,11 @@
 
     <!-- Barra de navegación -->
     <nav>
-        <a href="Quienes somos.html">¿Quiénes Somos?</a>
-        <a href="Bio.html">Biografía</a>
-        <a href="Medios de contacto.html">Medios de Contacto</a>
-        <a href="Servicios.html">Servicios</a>
-        <a href="Ubicación.html">Ubicación</a>
+        <a href="#">¿Quiénes Somos?</a>
+        <a href="#">Biografía</a>
+        <a href="#">Medios de Contacto</a>
+        <a href="#">Servicios</a>
+        <a href="#">Ubicación</a>
     </nav>
 
     <!-- Encabezado con logo -->
@@ -80,19 +79,7 @@
     <main>
         <h2>Acerca de CAPACITIUMX</h2>
         <p>
-            Bienvenidos a CAPACITIUMX, una empresa 100% regiomontana fundada en el año 2024, con la misión de ofrecer soluciones educativas innovadoras que ayuden a las personas y empresas a desarrollarse en el mundo digital.
-        </p>
-        <p>
-            En CAPACITIUMX nos especializamos en la creación y comercialización de cursos en línea y consultorías personalizadas que abarcan una amplia gama de temas y habilidades. Nuestra visión es transformar la educación y la capacitación mediante el uso de plataformas accesibles y flexibles que permitan a nuestros clientes aprender a su propio ritmo, desde cualquier lugar y en cualquier momento.
-        </p>
-        <p>
-            Estamos comprometidos con la excelencia, la responsabilidad social y el crecimiento continuo. En CAPACITIUMX creemos en la educación como una herramienta poderosa para el cambio y el desarrollo personal y profesional. Nos enorgullece ofrecer contenido educativo de alta calidad, impartido por expertos en sus áreas, y diseñado para brindar una experiencia de aprendizaje práctica y efectiva.
-        </p>
-        <p>
-            Nuestra sede en Monterrey, Nuevo León, nos ha permitido crecer con una base sólida y ser un referente de confianza para nuestros clientes. Nos caracterizamos por ser una empresa responsable, comprometida con el éxito de quienes confían en nosotros. Nos dedicamos a empoderar a individuos y empresas con las habilidades necesarias para enfrentar los retos del futuro.
-        </p>
-        <p>
-            En resumen, en CAPACITIUMX nos apasiona brindar soluciones educativas que marquen la diferencia. Estamos aquí para acompañarte en tu proceso de aprendizaje, siempre con un enfoque en la calidad y la mejora constante.
+            Bienvenidos a CAPACITIUMX, una empresa 100% regiomontana fundada en el año 2024, con la misión de ofrecer soluciones educativas innovadoras.
         </p>
 
         <!-- Contador de visitas -->
@@ -101,54 +88,28 @@
         </div>
     </main>
 
-    <!-- Script para el contador de visitas y el envío de correo -->
+    <!-- Script para el contador de visitas -->
     <script type="text/javascript">
-        // Configuración de EmailJS
-        const serviceID = 'service_qbl6dgs'; // Asegúrate de usar tu ID de servicio de EmailJS
-        const templateID = 'template_rnev7hk'; // Asegúrate de usar tu ID de plantilla de EmailJS
-        const userID = 'GPzA804wWUh1IDsJu'; // Asegúrate de usar tu Public Key de EmailJS
-
-        // Inicializa EmailJS
-        emailjs.init(userID);
-
-        // Función para enviar correo
-        function enviarCorreo(visitas) {
-            emailjs.send(serviceID, templateID, {
-                visitas: visitas,
-                to_email: 'capacitiumx@gmail.com'  // Asegúrate de poner tu correo aquí
-            })
-            .then(function(response) {
-                console.log('Correo enviado', response);
-            }, function(error) {
-                console.log('Error al enviar el correo', error);
-            });
-        }
-
-        // Función para incrementar visitas
         function incrementarVisitas() {
             if (localStorage.getItem("contadorVisitas") === null) {
-                localStorage.setItem("contadorVisitas", 1);
+                localStorage.setItem("contadorVisitas", 1);  // Inicializa en 1 si no existe
             } else {
                 let visitas = parseInt(localStorage.getItem("contadorVisitas"));
                 visitas++;
-                localStorage.setItem("contadorVisitas", visitas);
+                localStorage.setItem("contadorVisitas", visitas);  // Actualiza el contador
             }
 
             const visitas = localStorage.getItem("contadorVisitas");
-            document.getElementById("contador").innerText = "Número de visitas: " + visitas;
+            console.log("Visitas actuales: " + visitas);  // Muestra el valor del contador
 
-            // Enviar el correo con el número de visitas
-            enviarCorreo(visitas);
+            // Actualiza el texto del contador en la página
+            document.getElementById("contador").innerText = "Número de visitas: " + visitas;
         }
 
-        // Ejecutar función de incremento al cargar la página
         window.onload = incrementarVisitas;
     </script>
 
-    <!-- Incluye la librería de EmailJS -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-     <!-- Pie de página con derechos reservados -->
+    <!-- Pie de página con derechos reservados -->
     <footer>
         <p>&copy; Derechos Reservados - Monterrey, Nuevo León, México 2024</p>
     </footer>
