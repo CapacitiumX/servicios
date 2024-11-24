@@ -101,11 +101,12 @@
         </div>
     </main>
 
-    <!-- Música de fondo (sin controles, se reproduce automáticamente) -->
-    <audio autoplay loop>
-        <source src="main/prism.mp3" type="audio/mp3">
-        Tu navegador no soporta el formato de audio.
-    </audio>
+   <audio id="audio" autoplay loop>
+    <source src="prism.mp3" type="audio/mp3">
+    Tu navegador no soporta el formato de audio.
+</audio>
+<button onclick="document.getElementById('audio').play()">Reproducir música</button>
+
 
     <!-- Script para el contador de visitas -->
     <script type="text/javascript">
