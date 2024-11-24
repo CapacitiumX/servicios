@@ -65,7 +65,6 @@
         <a href="Medios de contacto.html">Medios de Contacto</a>
         <a href="Servicios.html">Servicios</a>
         <a href="Ubicación.html">Ubicación</a>
-        
     </nav>
 
     <!-- Encabezado con logo -->
@@ -91,12 +90,64 @@
         <p>
             En resumen, en CAPACITIUMX nos apasiona brindar soluciones educativas que marquen la diferencia. Estamos aquí para acompañarte en tu proceso de aprendizaje, siempre con un enfoque en la calidad y la mejora constante.
         </p>
+
+        <!-- Contador de visitas -->
+        <div class="contador">
+            <p id="contador">Cargando contador...</p>
+        </div>
     </main>
 
     <!-- Pie de página con derechos reservados -->
     <footer>
         <p>&copy; Derechos Reservados - Monterrey, Nuevo León, México 2024</p>
     </footer>
+
+    <!-- Script para el contador de visitas y el envío de correo -->
+    <script type="text/javascript">
+        // Configuración de EmailJS
+        const serviceID = 'tu-service-id'; // Reemplaza con tu ID del servicio de EmailJS
+        const templateID = 'tu-template-id'; // Reemplaza con tu ID de plantilla de EmailJS
+        const userID = 'tu-user-id'; // Reemplaza con tu ID de usuario de EmailJS
+
+        // Inicializa EmailJS
+        emailjs.init(userID);
+
+        // Función para enviar correo
+        function enviarCorreo(visitas) {
+            emailjs.send(serviceID, templateID, {
+                visitas: visitas,
+                to_email: 'micorreo@dominio.com'  // Reemplaza con tu correo
+            })
+            .then(function(response) {
+                console.log('Correo enviado', response);
+            }, function(error) {
+                console.log('Error al enviar el correo', error);
+            });
+        }
+
+        // Función para incrementar visitas
+        function incrementarVisitas() {
+            if (localStorage.getItem("contadorVisitas") === null) {
+                localStorage.setItem("contadorVisitas", 1);
+            } else {
+                let visitas = parseInt(localStorage.getItem("contadorVisitas"));
+                visitas++;
+                localStorage.setItem("contadorVisitas", visitas);
+            }
+
+            const visitas = localStorage.getItem("contadorVisitas");
+            document.getElementById("contador").innerText = "Número de visitas: " + visitas;
+
+            // Enviar el correo con el número de visitas
+            enviarCorreo(visitas);
+        }
+
+        // Ejecutar función de incremento al cargar la página
+        window.onload = incrementarVisitas;
+    </script>
+
+    <!-- Incluye la librería de EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 </body>
 </html>
