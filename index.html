@@ -101,13 +101,12 @@
         </div>
     </main>
 
-
     <!-- Script para el contador de visitas y el envío de correo -->
     <script type="text/javascript">
         // Configuración de EmailJS
-        const serviceID = 'service_qbl6dgs'; // Reemplaza con tu ID del servicio de EmailJS
-        const templateID = 'template_rnev7hk'; // Reemplaza con tu ID de plantilla de EmailJS
-        const userID = 'GPzA804wWUh1IDsJu'; // Reemplaza con tu Public Key de EmailJS
+        const serviceID = 'service_qbl6dgs'; // Asegúrate de usar tu ID de servicio de EmailJS
+        const templateID = 'template_rnev7hk'; // Asegúrate de usar tu ID de plantilla de EmailJS
+        const userID = 'GPzA804wWUh1IDsJu'; // Asegúrate de usar tu Public Key de EmailJS
 
         // Inicializa EmailJS
         emailjs.init(userID);
@@ -116,7 +115,7 @@
         function enviarCorreo(visitas) {
             emailjs.send(serviceID, templateID, {
                 visitas: visitas,
-                to_email: 'capacitiumx@gmail.com'  // Reemplaza con tu correo
+                to_email: 'capacitiumx@gmail.com'  // Asegúrate de poner tu correo aquí
             })
             .then(function(response) {
                 console.log('Correo enviado', response);
@@ -135,23 +134,4 @@
                 localStorage.setItem("contadorVisitas", visitas);
             }
 
-            const visitas = localStorage.getItem("contadorVisitas");
-            document.getElementById("contador").innerText = "Número de visitas: " + visitas;
-
-            // Enviar el correo con el número de visitas
-            enviarCorreo(visitas);
-        }
-
-        // Ejecutar función de incremento al cargar la página
-        window.onload = incrementarVisitas;
-    </script>
-
-    <!-- Incluye la librería de EmailJS -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-     <!-- Pie de página con derechos reservados -->
-    <footer>
-        <p>&copy; Derechos Reservados - Monterrey, Nuevo León, México 2024</p>
-    </footer>
-</body>
-</html>
+      
