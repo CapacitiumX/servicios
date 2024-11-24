@@ -103,52 +103,25 @@
 
     <!-- Script para el contador de visitas -->
     <script type="text/javascript">
-        // Función para obtener cookies
-        function getCookie(name) {
-            let cookieArr = document.cookie.split(";");
-            for (let i = 0; i < cookieArr.length; i++) {
-                let cookiePair = cookieArr[i].split("=");
-                if (name == cookiePair[0].trim()) {
-                    return decodeURIComponent(cookiePair[1]);
-                }
-            }
-            return null;
-        }
-
-        // Función para establecer una cookie
-        function setCookie(name, value, days) {
-            let date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            let expires = "expires=" + date.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/";
-        }
-
         // Función para incrementar visitas
         function incrementarVisitas() {
-            // Verifica si la cookie 'firstVisit' existe
-            if (getCookie("firstVisit") === null) {
-                // Si no existe la cookie, significa que es la primera visita, contamos
-                let visitas = localStorage.getItem("contadorVisitas");
-                if (visitas === null) {
-                    localStorage.setItem("contadorVisitas", 1); // Si no existe, inicializa el contador
-                    visitas = 1;
-                } else {
-                    visitas = parseInt(visitas) + 1; // Si existe, incrementa el contador
-                    localStorage.setItem("contadorVisitas", visitas);
-                }
+            let visitas = localStorage.getItem("contadorVisitas");
 
-                // Muestra el contador en la página
-                document.getElementById("contador").innerText = "Número de visitas: " + visitas;
-
-                // Establece la cookie para no contar más visitas desde este dispositivo
-                setCookie("firstVisit", "no", 365);
+            if (visitas === null) {
+                // Si no existe el contador, inicializa a 1
+                localStorage.setItem("contadorVisitas", 1);
+                visitas = 1;
             } else {
-                // Si la cookie existe, no cuenta la visita
-                document.getElementById("contador").innerText = "Número de visitas: " + localStorage.getItem("contadorVisitas");
+                // Si ya existe, incrementa el contador
+                visitas = parseInt(visitas) + 1;
+                localStorage.setItem("contadorVisitas", visitas);
             }
+
+            // Muestra el contador en la página
+            document.getElementById("contador").innerText = "Número de visitas: " + visitas;
         }
 
-        // Ejecutar función de incremento al cargar la página
+        // Ejecutar la función de incremento al cargar la página
         window.onload = incrementarVisitas;
     </script>
 
