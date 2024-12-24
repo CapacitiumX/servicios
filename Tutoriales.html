@@ -122,21 +122,19 @@
 
     <section class="tutoriales">
         
-       <div class="tutorial">
-            <h2>Cómo usar correctamente ZOOM</h2>
-            <div class="miniatura" onclick="mostrarVideo('ZOOM')">
-                <img src="icono zoom.png" alt="Miniatura del tutorial de ZOOM">
-            </div>
-            <!-- Video oculto inicialmente -->
-            <div class="video-container" id="ZOOM">
-                <video controls>
-                    <source src="zoom.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video.
-                </video>
-            </div>
-            <p class="descripcion">En este tutorial te mostramos cómo usar ZOOM de manera efectiva para tus reuniones en línea. Desde lo básico hasta las funciones avanzadas.</p>
-        </div>
-        
+      <div class="tutorial">
+    <h2>Cómo usar correctamente ZOOM</h2>
+    <div class="miniatura" onclick="mostrarVideo()">
+        <img src="icono zoom.png" alt="Miniatura del tutorial de ZOOM">
+    </div>
+
+    <!-- Video oculto inicialmente -->
+    <div class="video-container" id="ZOOM">
+        <video id="videoZoom" controls>
+            <source src="zoom.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+    </div>
          <div class="tutorial">
             <h2>Cómo convertir las diapositivas de PowerPoint a modo presentación</h2>
             <div class="miniatura" onclick="mostrarVideo('Modo Presentación')">
