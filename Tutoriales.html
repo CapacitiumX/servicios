@@ -125,60 +125,69 @@
 <div class="tutorial">
     <h2>Cómo usar correctamente ZOOM</h2>
     
-    <!-- Miniatura de la imagen, que al hacer clic, mostrará el video -->
-    <div class="miniatura" onclick="mostrarVideo()">
-        <img id="miniatura" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM">
+    <!-- Miniaturas y videos -->
+    <div class="video-item">
+        <!-- Miniatura del video 1 -->
+        <div class="miniatura" onclick="mostrarVideo('videoZoom1', 'miniatura1', 'ZOOM1')">
+            <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
+        </div>
+
+        <!-- Contenedor del video 1, inicialmente oculto -->
+        <div class="video-container" id="ZOOM1" style="display: none;">
+            <video id="videoZoom1" controls autoplay>
+                <source src="zoom.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
     </div>
 
-    <!-- Contenedor del video, inicialmente oculto -->
-    <div class="video-container" id="ZOOM" style="display: none;">
-        <video id="videoZoom" controls autoplay>
-            <source src="zoom.mp4" type="video/mp4">
-            Tu navegador no soporta la etiqueta de video.
-        </video>
+    <div class="video-item">
+        <!-- Miniatura del video 2 -->
+        <div class="miniatura" onclick="mostrarVideo('videoZoom2', 'miniatura2', 'ZOOM2')">
+            <img id="miniatura2" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 2">
+        </div>
+
+        <!-- Contenedor del video 2, inicialmente oculto -->
+        <div class="video-container" id="ZOOM2" style="display: none;">
+            <video id="videoZoom2" controls autoplay>
+                <source src="zoom.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
     </div>
+
+    <div class="video-item">
+        <!-- Miniatura del video 3 -->
+        <div class="miniatura" onclick="mostrarVideo('videoZoom3', 'miniatura3', 'ZOOM3')">
+            <img id="miniatura3" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 3">
+        </div>
+
+        <!-- Contenedor del video 3, inicialmente oculto -->
+        <div class="video-container" id="ZOOM3" style="display: none;">
+            <video id="videoZoom3" controls autoplay>
+                <source src="zoom.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+    </div>
+
+    <div class="video-item">
+        <!-- Miniatura del video 4 -->
+        <div class="miniatura" onclick="mostrarVideo('videoZoom4', 'miniatura4', 'ZOOM4')">
+            <img id="miniatura4" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 4">
+        </div>
+
+        <!-- Contenedor del video 4, inicialmente oculto -->
+        <div class="video-container" id="ZOOM4" style="display: none;">
+            <video id="videoZoom4" controls autoplay>
+                <source src="zoom.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+    </div>
+
 </div>
 
-       <div class="tutorial">
-    <h2>Cómo usar correctamente ZOOM</h2>
-    <!-- Miniatura de la imagen, que al hacer clic, mostrará el video -->
-    <div class="miniatura" onclick="mostrarVideo()">
-        <img src="icono zoom.png" alt="Miniatura del tutorial de ZOOM">
-    </div>
-
-    <!-- Contenedor del video, inicialmente oculto -->
-    <div class="video-container" id="ZOOM">
-        <!-- Reemplazamos la fuente del video con un iframe de YouTube -->
-        <iframe id="youtubeVideo" width="100%" height="315" 
-                src="zoom.mp4" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-    </div>
-           
-        <div class="tutorial">
-            <h2>Activando Office 365 legal y gratuitamente</h2>
-            <div class="miniatura" onclick="mostrarVideo()">
-                <img src="icono office.png" alt="Miniatura del tutorial Office>
-            </div>
-            <div class="video-container" id="video2">
-                <iframe src="office.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p class="descripcion">Este tutorial es ideal para quienes desean dominar el software Y. Cubrimos todo, desde la instalación hasta las técnicas más avanzadas.</p>
-        </div>
-
-        <div class="tutorial">
-            <h2>Elimina lo borroso de las fotos e imágenes con esta gran aplicación</h2>
-            <div class="miniatura" onclick="mostrarVideo('Remini')">
-                <img src="borroso.png" alt="Miniatura del tutorial Remini">
-            </div>
-            <div class="video-container" id="video3">
-                <iframe src="borroso.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p class="descripcion">Aprende a programar en Z, comenzando con los conceptos básicos y avanzando a proyectos reales. Este tutorial es perfecto para principiantes.</p>
-        </div>
-
-        <!-- Agrega más tutoriales según sea necesario -->
 
     </section>
 
@@ -186,16 +195,16 @@
         <p>&copy; 2024 CapacitiumX. Monterrey, Nuevo León, México. Todos los derechos reservados.</p>
     </footer>
 
- <script>
-    function mostrarVideo() {
-        // Ocultar la miniatura de la imagen
-        document.getElementById('miniatura').style.display = 'none';
+<script>
+    function mostrarVideo(videoId, miniaturaId, contenedorId) {
+        // Ocultar la miniatura correspondiente
+        document.getElementById(miniaturaId).style.display = 'none';
 
-        // Mostrar el contenedor del video
-        document.getElementById('ZOOM').style.display = 'block';
-        
-        // Reproducir el video automáticamente
-        document.getElementById('videoZoom').play();
+        // Mostrar el contenedor del video correspondiente
+        document.getElementById(contenedorId).style.display = 'block';
+
+        // Reproducir el video correspondiente
+        document.getElementById(videoId).play();
     }
 </script>
 
