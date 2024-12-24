@@ -127,20 +127,21 @@
     
     <!-- Miniatura de la imagen, que al hacer clic, mostrará el video -->
     <div class="miniatura" onclick="mostrarVideo()">
-        <img src="icono zoom.png" alt="Miniatura del tutorial de ZOOM">
+        <img id="miniatura" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM">
     </div>
 
-    <!-- Enlace debajo de la miniatura -->
+    <!-- Enlace debajo de la miniatura (opcional) -->
     <p><a href="zoom.mp4" target="_blank">Ver video tutorial de ZOOM</a></p>
 
     <!-- Contenedor del video, inicialmente oculto -->
-    <div class="video-container" id="ZOOM">
-        <video id="videoZoom" controls>
+    <div class="video-container" id="ZOOM" style="display: none;">
+        <video id="videoZoom" controls autoplay>
             <source src="zoom.mp4" type="video/mp4">
             Tu navegador no soporta la etiqueta de video.
         </video>
     </div>
 </div>
+
        <div class="tutorial">
     <h2>Cómo usar correctamente ZOOM</h2>
     <!-- Miniatura de la imagen, que al hacer clic, mostrará el video -->
@@ -188,10 +189,14 @@
         <p>&copy; 2024 CapacitiumX. Monterrey, Nuevo León, México. Todos los derechos reservados.</p>
     </footer>
 
-   <script>
+  <script>
     function mostrarVideo() {
+        // Ocultar la miniatura de la imagen
+        document.getElementById('miniatura').style.display = 'none';
+
         // Mostrar el contenedor del video
         document.getElementById('ZOOM').style.display = 'block';
+        
         // Reproducir el video automáticamente
         document.getElementById('videoZoom').play();
     }
