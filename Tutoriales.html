@@ -120,81 +120,77 @@
         <p>Aprende a tu ritmo con nuestros tutoriales</p>
     </header>
 
-    <section class="tutoriales">
+  <section class="tutoriales">
+    <div class="tutorial">
+        <h2>Aprende a usar correctamente ZOOM</h2>
         
-<div class="tutorial">
-    <h2>Aprende a usar correctamente ZOOM</h2>
-    
-    <!-- Miniaturas y videos -->
-    <div class="video-item">
-        <!-- Miniatura del video 1 -->
-        <div class="miniatura" onclick="mostrarVideo('videoZoom1', 'miniatura1', 'ZOOM1')">
-            <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
+        <!-- Miniaturas y videos -->
+        <div class="video-item">
+            <!-- Miniatura del video 1 -->
+            <div class="miniatura" onclick="mostrarVideo('videoZoom1', 'miniatura1', 'ZOOM1')">
+                <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
+            </div>
+
+            <!-- Contenedor del video 1, inicialmente oculto -->
+            <div class="video-container" id="ZOOM1" style="display: none;">
+                <video id="videoZoom1" controls>
+                    <source src="zoom.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
         </div>
 
-        <!-- Contenedor del video 1, inicialmente oculto -->
-        <div class="video-container" id="ZOOM1" style="display: none;">
-            <video id="videoZoom1" controls autoplay>
-                <source src="zoom.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
+        <div class="video-item">
+            <!-- Miniatura del video 2 -->
+            <div class="miniatura" onclick="mostrarVideo('videoZoom2', 'miniatura2', 'BORROSO2')">
+                <img id="miniatura2" src="icono borroso.png" alt="Miniatura del tutorial de BORROSO 2">
+            </div>
+
+            <!-- Contenedor del video 2, inicialmente oculto -->
+            <div class="video-container" id="BORROSO2" style="display: none;">
+                <video id="videoBorroso2" controls>
+                    <source src="borroso.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
         </div>
+
+        <div class="video-item">
+            <!-- Miniatura del video 3 -->
+            <div class="miniatura" onclick="mostrarVideo('videoZoom3', 'miniatura3', 'OFFICE3')">
+                <img id="miniatura3" src="icono office.png" alt="Miniatura del tutorial de OFFICE 3">
+            </div>
+
+            <!-- Contenedor del video 3, inicialmente oculto -->
+            <div class="video-container" id="OFFICE3" style="display: none;">
+                <video id="videoOffice3" controls>
+                    <source src="office.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <!-- Miniatura del video 4 -->
+            <div class="miniatura" onclick="mostrarVideo('videoModo4', 'miniatura4', 'MODO4')">
+                <img id="miniatura4" src="icono modopresentacion.png" alt="Miniatura del tutorial de MODOPRESENTACION 4">
+            </div>
+
+            <!-- Contenedor del video 4, inicialmente oculto -->
+            <div class="video-container" id="MODO4" style="display: none;">
+                <video id="videoModo4" controls>
+                    <source src="modopresentacion.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+        </div>
+
     </div>
-
-    <div class="video-item">
-        <!-- Miniatura del video 2 -->
-        <div class="miniatura" onclick="mostrarVideo('videoZoom2', 'miniatura2', 'BORROSO2')">
-            <img id="miniatura2" src="icono borroso.png" alt="Miniatura del tutorial de BORROSO 2">
-        </div>
-
-        <!-- Contenedor del video 2, inicialmente oculto -->
-        <div class="video-container" id="BORROSO2" style="display: none;">
-            <video id="videoBorroso2" controls autoplay>
-                <source src="borroso.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
-        </div>
-    </div>
-
-    <div class="video-item">
-        <!-- Miniatura del video 3 -->
-        <div class="miniatura" onclick="mostrarVideo('videoZoom3', 'miniatura3', 'OFFICE3')">
-            <img id="miniatura3" src="icono office.png" alt="Miniatura del tutorial de OFFICE 3">
-        </div>
-
-        <!-- Contenedor del video 3, inicialmente oculto -->
-        <div class="video-container" id="OFFICE3" style="display: none;">
-            <video id="videoOffice3" controls autoplay>
-                <source src="office.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
-        </div>
-    </div>
-
-    <div class="video-item">
-        <!-- Miniatura del video 4 -->
-        <div class="miniatura" onclick="mostrarVideo('videoModo4', 'miniatura4', 'MODO4')">
-            <img id="miniatura4" src="icono modopresentacion.png" alt="Miniatura del tutorial de MODOPRESENTACION 4">
-        </div>
-
-        <!-- Contenedor del video 4, inicialmente oculto -->
-        <div class="video-container" id="MODO4" style="display: none;">
-            <video id="videoModo4" controls autoplay>
-                <source src="modopresentacion.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
-        </div>
-    </div>
-
-</div>
-
-
-    </section>
+</section>
 
     <footer>
         <p>&copy; 2024 CapacitiumX. Monterrey, Nuevo León, México. Todos los derechos reservados.</p>
     </footer>
-
 <script>
     function mostrarVideo(videoId, miniaturaId, contenedorId) {
         // Ocultar la miniatura correspondiente
@@ -203,8 +199,9 @@
         // Mostrar el contenedor del video correspondiente
         document.getElementById(contenedorId).style.display = 'block';
 
-        // Reproducir el video correspondiente
-        document.getElementById(videoId).play();
+        // Obtener el video y reproducirlo
+        var video = document.getElementById(videoId);
+        video.play();  // Reproducir el video
     }
 </script>
 
