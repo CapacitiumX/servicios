@@ -139,17 +139,23 @@
 
     <p class="descripcion">En este tutorial te mostramos cómo usar ZOOM de manera efectiva para tus reuniones en línea. Desde lo básico hasta las funciones avanzadas.</p>
 </div>
-         <div class="tutorial">
-            <h2>Cómo convertir las diapositivas de PowerPoint a modo presentación</h2>
-            <div class="miniatura" onclick="mostrarVideo('Modo Presentación')">
-                <img src="icono modopresentacion.png" alt="Miniatura del tutorial modo presentación">
-            </div>
-            <div class="video-container" id="video1">
-                <iframe src="modopresentacion.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p class="descripcion">En este tutorial te mostramos cómo utilizar la herramienta X para mejorar tu productividad. Aprenderás desde los conceptos básicos hasta las funciones avanzadas.</p>
-        </div>
-        
+       <div class="tutorial">
+    <h2>Cómo usar correctamente ZOOM</h2>
+    <!-- Miniatura de la imagen, que al hacer clic, mostrará el video -->
+    <div class="miniatura" onclick="mostrarVideo()">
+        <img src="https://img.youtube.com/vi/1TQ62EeLMPc/hqdefault.jpg" alt="Miniatura del tutorial de ZOOM">
+    </div>
+
+    <!-- Contenedor del video, inicialmente oculto -->
+    <div class="video-container" id="ZOOM">
+        <!-- Reemplazamos la fuente del video con un iframe de YouTube -->
+        <iframe id="youtubeVideo" width="100%" height="315" 
+                src="https://www.youtube.com/embed/1TQ62EeLMPc" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+           
         <div class="tutorial">
             <h2>Activando Office 365 legal y gratuitamente</h2>
             <div class="miniatura" onclick="mostrarVideo('Office')">
