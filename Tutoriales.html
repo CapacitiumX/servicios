@@ -124,10 +124,14 @@
         
 <div class="tutorial">
     <h2>Cómo usar correctamente ZOOM</h2>
+    
     <!-- Miniatura de la imagen, que al hacer clic, mostrará el video -->
     <div class="miniatura" onclick="mostrarVideo()">
         <img src="icono zoom.png" alt="Miniatura del tutorial de ZOOM">
     </div>
+
+    <!-- Enlace debajo de la miniatura -->
+    <p><a href="zoom.mp4" target="_blank">Ver video tutorial de ZOOM</a></p>
 
     <!-- Contenedor del video, inicialmente oculto -->
     <div class="video-container" id="ZOOM">
@@ -136,8 +140,6 @@
             Tu navegador no soporta la etiqueta de video.
         </video>
     </div>
-
-    <p class="descripcion">En este tutorial te mostramos cómo usar ZOOM de manera efectiva para tus reuniones en línea. Desde lo básico hasta las funciones avanzadas.</p>
 </div>
        <div class="tutorial">
     <h2>Cómo usar correctamente ZOOM</h2>
@@ -186,19 +188,14 @@
         <p>&copy; 2024 CapacitiumX. Monterrey, Nuevo León, México. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        function mostrarVideo(videoId) {
-            // Ocultar todos los videos
-            const videos = document.querySelectorAll('.video-container');
-            videos.forEach(function(video) {
-                video.style.display = 'none';
-            });
-
-            // Mostrar el video correspondiente
-            const video = document.getElementById(videoId);
-            video.style.display = 'block';
-        }
-    </script>
+   <script>
+    function mostrarVideo() {
+        // Mostrar el contenedor del video
+        document.getElementById('ZOOM').style.display = 'block';
+        // Reproducir el video automáticamente
+        document.getElementById('videoZoom').play();
+    }
+</script>
 
 </body>
 </html>
