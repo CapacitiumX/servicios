@@ -47,6 +47,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            text-align: center;
         }
 
         .tutorial h2 {
@@ -55,7 +56,32 @@
             margin-bottom: 10px;
         }
 
+        .miniatura {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .miniatura img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .miniatura:hover img {
+            transform: scale(1.05);
+        }
+
+        .descripcion {
+            font-size: 1em;
+            color: #555;
+        }
+
         .video-container {
+            display: none; /* Inicialmente oculto */
             position: relative;
             padding-bottom: 56.25%; /* Mantener relación 16:9 */
             height: 0;
@@ -96,35 +122,47 @@
 
     <section class="tutoriales">
         <div class="tutorial">
-            <h2>Cómo convertir diapositivas de PowerPoint a modo presentación X</h2>
-            <div class="video-container">
-                <iframe src="modopresentacion.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2>Cómo usar correctamente ZOOM</h2>
+            <div class="miniatura" onclick="mostrarVideo('ZOOM')">
+                <img src="https://img.youtube.com/vi/ID_DEL_VIDEO_1/maxresdefault.jpg" alt="Miniatura del tutorial Cómo usar la herramienta X">
             </div>
-            <p>En este tutorial te mostramos cómo utilizar la herramienta X para mejorar tu productividad. Aprenderás desde los conceptos básicos hasta las funciones avanzadas.</p>
-        </div>
-
-        <div class="tutorial">
-            <h2>Cómo activar Office 365 legal y gratuitamente</h2>
-            <div class="video-container">
-                <iframe src="office.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p>En este tutorial te mostramos cómo utilizar la herramienta X para mejorar tu productividad. Aprenderás desde los conceptos básicos hasta las funciones avanzadas.</p>
-        </div>
-
-        <div class="tutorial">
-            <h2>Como usar correctamente Zooom</h2>
-            <div class="video-container">
+            <div class="video-container" id="video1">
                 <iframe src="zoom.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <p>Este tutorial es ideal para quienes desean dominar el software Y. Cubrimos todo, desde la instalación hasta las técnicas más avanzadas.</p>
+            <p class="descripcion">En este tutorial te mostramos cómo utilizar la herramienta X para mejorar tu productividad. Aprenderás desde los conceptos básicos hasta las funciones avanzadas.</p>
+        </div>
+
+         <div class="tutorial">
+            <h2>Cómo convertir las diapositivas de PowerPoint a modo presentación</h2>
+            <div class="miniatura" onclick="mostrarVideo('ZOOM')">
+                <img src="https://img.youtube.com/vi/ID_DEL_VIDEO_1/maxresdefault.jpg" alt="Miniatura del tutorial Cómo usar la herramienta X">
+            </div>
+            <div class="video-container" id="video1">
+                <iframe src="modopresentacion.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="descripcion">En este tutorial te mostramos cómo utilizar la herramienta X para mejorar tu productividad. Aprenderás desde los conceptos básicos hasta las funciones avanzadas.</p>
+        </div>
+        
+        <div class="tutorial">
+            <h2>Activando Office 365 legal y gratuitamente</h2>
+            <div class="miniatura" onclick="mostrarVideo('video2')">
+                <img src="https://img.youtube.com/vi/ID_DEL_VIDEO_2/maxresdefault.jpg" alt="Miniatura del tutorial Dominando el software Y">
+            </div>
+            <div class="video-container" id="video2">
+                <iframe src="office.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="descripcion">Este tutorial es ideal para quienes desean dominar el software Y. Cubrimos todo, desde la instalación hasta las técnicas más avanzadas.</p>
         </div>
 
         <div class="tutorial">
-            <h2>La mejor app para eliminar lo borroso a fotos e imagenes</h2>
-            <div class="video-container">
+            <h2>Elimina lo borroso de las fotos e imágenes con esta gran aplicación</h2>
+            <div class="miniatura" onclick="mostrarVideo('video3')">
+                <img src="https://img.youtube.com/vi/ID_DEL_VIDEO_3/maxresdefault.jpg" alt="Miniatura del tutorial Introducción a la programación en Z">
+            </div>
+            <div class="video-container" id="video3">
                 <iframe src="borroso.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <p>Aprende a programar en Z, comenzando con los conceptos básicos y avanzando a proyectos reales. Este tutorial es perfecto para principiantes.</p>
+            <p class="descripcion">Aprende a programar en Z, comenzando con los conceptos básicos y avanzando a proyectos reales. Este tutorial es perfecto para principiantes.</p>
         </div>
 
         <!-- Agrega más tutoriales según sea necesario -->
@@ -132,9 +170,25 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 CapacitiumX. Todos los derechos reservados.</p>
+        <p>&copy; 2024 CapacitiumX. Monterrey, Nuevo León, México. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function mostrarVideo(videoId) {
+            // Ocultar todos los videos
+            const videos = document.querySelectorAll('.video-container');
+            videos.forEach(function(video) {
+                video.style.display = 'none';
+            });
+
+            // Mostrar el video correspondiente
+            const video = document.getElementById(videoId);
+            video.style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
+
+ 
 
