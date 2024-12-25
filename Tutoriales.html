@@ -11,39 +11,6 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Estilo para las filas de videos */
-        .video-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            flex-wrap: wrap; /* Permite que los elementos se ajusten */
-        }
-
-        /* Estilo para cada video */
-        .video-item {
-            width: 30%; /* 3 videos por fila */
-            margin-bottom: 15px;
-        }
-
-        /* Estilo para las miniaturas */
-        .miniatura img {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-        }
-
-        /* Estilo opcional: Añadir un borde o sombreado a los videos */
-        .video-item {
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-
-        .video-item:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
         /* Estilo para el título */
         h2 {
             text-align: center;
@@ -51,52 +18,28 @@
             margin-top: 20px;
         }
 
-        /* Ajuste de tamaño para los videos */
-        video {
+        /* Estilo para el contenedor del formulario */
+        .form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        iframe {
             width: 100%;
-            height: 200px; /* Ajustamos la altura de todos los videos para que sean uniformes */
-            object-fit: cover; /* Mantiene la proporción sin distorsionar */
-        }
-
-        /* Estilo para el formulario */
-        form {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        input, button {
-            padding: 10px;
-            margin: 5px;
-            font-size: 16px;
-        }
-
-        button {
-            background-color: #e91e63;
-            color: white;
+            height: 800px;
             border: none;
-            cursor: pointer;
         }
 
-        button:hover {
-            background-color: #c2185b;
-        }
-
-        .certificado {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .certificado a {
-            color: #fff;
-            background-color: #4caf50;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .certificado a:hover {
-            background-color: #45a049;
+        /* Estilo para las filas de videos */
+        .video-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten */
         }
     </style>
 </head>
@@ -106,6 +49,12 @@
     <div class="tutorial">
         <h2>Tutoriales CapacitiumX</h2>
 
+        <!-- Formulario de Google Forms incrustado -->
+        <div class="form-container">
+            <h3>Formulario de Registro</h3>
+            <iframe src="https://forms.office.com/r/y9pcaX0bWb" title="Formulario de Registro"></iframe>
+        </div>
+
         <!-- Fila de videos (1-3) -->
         <div class="video-row">
             <div class="video-item">
@@ -113,36 +62,43 @@
                     <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
                 </div>
                 <div class="video-container" id="ZOOM1" style="display: none;">
-                    <video id="videoZoom1" controls onended="mostrarCertificado('certificadoZoom1')">
+                    <video id="videoZoom1" controls>
                         <source src="zoom.mp4" type="video/mp4">
                         Tu navegador no soporta la etiqueta de video.
                     </video>
-                    <div id="certificadoZoom1" class="certificado">
-                        <p>¡Felicidades por completar el tutorial de ZOOM 1!</p>
-                        <a href="ruta_a_tu_certificado.pdf" download>Descargar Certificado</a>
-                    </div>
                 </div>
             </div>
 
-            <!-- Puedes agregar más videos aquí con la misma estructura -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoReels1', 'miniatura2', 'REELS1')">
+                    <img id="miniatura2" src="icono reels.png" alt="Miniatura del tutorial de REELS 1">
+                </div>
+                <div class="video-container" id="REELS1" style="display: none;">
+                    <video id="videoReels1" controls>
+                        <source src="reels.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+            </div>
 
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoChatgpt1', 'miniatura3', 'Copilot1')">
+                    <img id="miniatura3" src="enfrentados.png" alt="Miniatura del tutorial de CHATGPT 1">
+                </div>
+                <div class="video-container" id="Copilot1" style="display: none;">
+                    <video id="videoChatgpt1" controls>
+                        <source src="enfrentados.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+            </div>
         </div>
 
-        <!-- Formulario para recopilar información -->
-        <section>
-            <h3>Participa y obtén tu certificado</h3>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSezN1Cj6Z0zKgs1x5XpIzX1MF7wHVt3hgaF1NYVpgvJ6NlMlA/formResponse" method="POST" target="_blank">
-                <input type="text" name="entry.1234567890" placeholder="Tu Nombre" required>
-                <input type="email" name="entry.0987654321" placeholder="Tu Correo" required>
-                <button type="submit">Enviar Información</button>
-            </form>
-        </section>
-
+        <!-- Aquí seguirían el resto de tus videos, similar a lo anterior -->
     </div>
 </section>
 
 <script>
-    // Función para mostrar el video y ocultar la miniatura
     function mostrarVideo(videoId, miniaturaId, contenedorId) {
         var video = document.getElementById(videoId);
         var miniatura = document.getElementById(miniaturaId);
@@ -158,12 +114,6 @@
             video.pause();
             miniatura.style.display = "block";
         }
-    }
-
-    // Función para mostrar el certificado al finalizar el video
-    function mostrarCertificado(certificadoId) {
-        var certificado = document.getElementById(certificadoId);
-        certificado.style.display = "block";  // Muestra el enlace del certificado
     }
 </script>
 
