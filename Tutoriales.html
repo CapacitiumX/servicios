@@ -105,11 +105,11 @@
     <div class="tutorial">
         <h2>Tutoriales CapacitiumX</h2>
 
-        <!-- Fila de videos (1-3) -->
+        <!-- Video 1 -->
         <div class="video-row">
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarFormulario('videoZoom1', 'miniatura1', 'ZOOM1')">
-                    <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
+                    <img id="miniatura1" src="icono_zoom.png" alt="Miniatura del tutorial de ZOOM 1">
                 </div>
                 <div class="video-container" id="ZOOM1" style="display: none;">
                     <video id="videoZoom1" controls>
@@ -121,7 +121,7 @@
 
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarFormulario('videoReels1', 'miniatura2', 'REELS1')">
-                    <img id="miniatura2" src="icono reels.png" alt="Miniatura del tutorial de REELS 1">
+                    <img id="miniatura2" src="icono_reels.png" alt="Miniatura del tutorial de REELS 1">
                 </div>
                 <div class="video-container" id="REELS1" style="display: none;">
                     <video id="videoReels1" controls>
@@ -144,11 +144,11 @@
             </div>
         </div>
 
-        <!-- Fila de videos (4-6) -->
+        <!-- Video 2 -->
         <div class="video-row">
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarFormulario('videoZoom2', 'miniatura4', 'ZOOM2')">
-                    <img id="miniatura4" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 2">
+                    <img id="miniatura4" src="icono_zoom.png" alt="Miniatura del tutorial de ZOOM 2">
                 </div>
                 <div class="video-container" id="ZOOM2" style="display: none;">
                     <video id="videoZoom2" controls>
@@ -160,7 +160,7 @@
 
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarFormulario('videoReels2', 'miniatura5', 'REELS2')">
-                    <img id="miniatura5" src="icono reels.png" alt="Miniatura del tutorial de REELS 2">
+                    <img id="miniatura5" src="icono_reels.png" alt="Miniatura del tutorial de REELS 2">
                 </div>
                 <div class="video-container" id="REELS2" style="display: none;">
                     <video id="videoReels2" controls>
@@ -183,8 +183,46 @@
             </div>
         </div>
 
-        <!-- Continuar con los videos (7-21) con la misma estructura -->
-        <!-- (Repetir este bloque hasta el video 21) -->
+        <!-- Video 3 -->
+        <div class="video-row">
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarFormulario('videoBorroso1', 'miniatura7', 'BORROSO1')">
+                    <img id="miniatura7" src="icono_borroso.png" alt="Miniatura del tutorial de BORROSO 1">
+                </div>
+                <div class="video-container" id="BORROSO1" style="display: none;">
+                    <video id="videoBorroso1" controls>
+                        <source src="borroso1.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+            </div>
+
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarFormulario('videoPdf1', 'miniatura8', 'PDF1')">
+                    <img id="miniatura8" src="icono_pdf.png" alt="Miniatura del tutorial de PDF 1">
+                </div>
+                <div class="video-container" id="PDF1" style="display: none;">
+                    <video id="videoPdf1" controls>
+                        <source src="pdf1.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+            </div>
+
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarFormulario('videoOffice1', 'miniatura9', 'OFFICE1')">
+                    <img id="miniatura9" src="icono_office.png" alt="Miniatura del tutorial de OFFICE 1">
+                </div>
+                <div class="video-container" id="OFFICE1" style="display: none;">
+                    <video id="videoOffice1" controls>
+                        <source src="office1.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Continuar hasta el Video 21 con la misma estructura -->
 
         <!-- Formulario -->
         <div class="form-container" id="formContainer">
@@ -231,6 +269,9 @@
             // Ocultar formulario
             document.getElementById('formContainer').style.display = 'none';
 
+            // Enviar los datos por correo (simulando con un correo en PHP)
+            enviarCorreo(nombre, whatsapp, edad, correo, pais, ciudad);
+
             // Recuperamos los valores del video y miniatura desde sessionStorage
             const videoId = sessionStorage.getItem('videoId');
             const miniaturaId = sessionStorage.getItem('miniaturaId');
@@ -246,6 +287,27 @@
             video.play();
             miniatura.style.display = "none";
         }
+    }
+
+    function enviarCorreo(nombre, whatsapp, edad, correo, pais, ciudad) {
+        var formData = new FormData();
+        formData.append('nombre', nombre);
+        formData.append('whatsapp', whatsapp);
+        formData.append('edad', edad);
+        formData.append('correo', correo);
+        formData.append('pais', pais);
+        formData.append('ciudad', ciudad);
+
+        fetch('send_email.php', {
+            method: 'POST',
+            body: formData
+        }).then(response => {
+            if (response.ok) {
+                console.log('Formulario enviado con éxito.');
+            } else {
+                console.error('Error al enviar el formulario.');
+            }
+        });
     }
 </script>
 
