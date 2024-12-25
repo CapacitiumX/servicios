@@ -53,6 +53,7 @@
         
         <!-- Fila de videos (1-4) -->
         <div class="video-row">
+            <!-- Video 1 -->
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarVideo('videoZoom1', 'miniatura1', 'ZOOM1')">
                     <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
@@ -65,6 +66,7 @@
                 </div>
             </div>
 
+            <!-- Video 2 -->
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarVideo('videoReels1', 'miniatura2', 'REELS1')">
                     <img id="miniatura2" src="icono reels.png" alt="Miniatura del tutorial de REELS 1">
@@ -77,6 +79,7 @@
                 </div>
             </div>
 
+            <!-- Video 3 -->
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarVideo('videoChatgpt1', 'miniatura3', 'Copilot1')">
                     <img id="miniatura3" src="icono chatgpt.png" alt="Miniatura del tutorial de CHATGPT 1">
@@ -89,6 +92,7 @@
                 </div>
             </div>
 
+            <!-- Video 4 -->
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarVideo('videoZoom2', 'miniatura4', 'BORROSO2')">
                     <img id="miniatura4" src="icono borroso.png" alt="Miniatura del tutorial de BORROSO 2">
@@ -292,8 +296,20 @@
                     </video>
                 </div>
             </div>
-        </div>
 
+            <!-- Video 20 -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoprompts', 'miniatura20', 'prompts')">
+                    <img id="miniatura20" src="prompts.png" alt="Miniatura del tutorial de prompts">
+                </div>
+                <div class="video-container" id="prompts" style="display: none;">
+                    <video id="videoprompts" controls>
+                        <source src="prompts.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -320,3 +336,5 @@
 
 </body>
 </html>
+
+        
