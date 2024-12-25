@@ -139,6 +139,21 @@
             </div>
         </div>
 
+        <div class="video-item">
+            <!-- Miniatura del video 1 -->
+            <div class="miniatura" onclick="mostrarVideo('videoReels1', 'miniatura1', 'REELS1')">
+                <img id="miniatura1" src="icono reels.png" alt="Miniatura del tutorial de REELS 1">
+            </div>
+
+            <!-- Contenedor del video 1, inicialmente oculto -->
+            <div class="video-container" id="REELS1" style="display: none;">
+                <video id="videoReels1" controls>
+                    <source src="reels.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+        </div>
+
         <!-- Miniatura y video del Copilot -->
         <div class="video-item">
             <!-- Miniatura del video de Copilot -->
