@@ -5,98 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutoriales CapacitiumX</title>
     <style>
-        body {
-            background-color: #f8bbd0;
-            font-family: Arial, sans-serif;
-        }
-
-        .video-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .video-item {
-            width: 30%;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-
-        .video-item:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            text-align: center;
-            color: #e91e63;
-            margin-top: 20px;
-        }
-
-        video {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .form-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-
-        .form-container input, .form-container button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        .form-container button {
-            background-color: #e91e63;
-            color: white;
-            cursor: pointer;
-        }
-
-        .form-container button:hover {
-            background-color: #c2185b;
-        }
-
-        .miniatura img {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-        }
+        body { background-color: #f8bbd0; font-family: Arial, sans-serif; }
+        .video-row { display: flex; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; }
+        .video-item { width: 30%; margin-bottom: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 8px; background-color: #f9f9f9; }
+        .video-item:hover { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        h2 { text-align: center; color: #e91e63; margin-top: 20px; }
+        video { width: 100%; height: 200px; object-fit: cover; }
+        .form-container { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); display: none; }
+        .form-container input { margin-bottom: 10px; width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .form-container button { padding: 10px 15px; background-color: #e91e63; color: white; border: none; border-radius: 4px; cursor: pointer; }
     </style>
 </head>
 <body>
+
 <section class="tutoriales">
     <div class="tutorial">
         <h2>Tutoriales CapacitiumX</h2>
 
-        <!-- Fila de videos -->
+        <!-- Video 1 -->
         <div class="video-row">
-
-            <!-- Video 1 -->
             <div class="video-item">
-                <div class="miniatura" onclick="mostrarFormulario('videoZoom1', 'miniatura1', 'ZOOM1')">
+                <div class="miniatura" onclick="mostrarFormulario('videoZoom1', 'miniatura1', 'formulario1')">
                     <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
                 </div>
-                <div class="form-container" id="formularioZoom1">
-                    <form id="formZoom1" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="enviarFormulario(event, 'formZoom1', 'videoZoom1', 'miniatura1', 'ZOOM1')">
-                        <input type="text" name="nombre" placeholder="Nombre completo" required>
-                        <input type="number" name="edad" placeholder="Edad" required>
-                        <input type="text" name="ciudad" placeholder="Ciudad" required>
-                        <input type="text" name="pais" placeholder="País" required>
-                        <input type="text" name="whatsapp" placeholder="WhatsApp" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" required>
-                        <button type="submit">Enviar y ver video</button>
+                <div class="form-container" id="formulario1">
+                    <form onsubmit="return enviarFormulario(event, 'videoZoom1', 'formulario1')">
+                        <input type="text" id="nombre" placeholder="Nombre completo" required>
+                        <input type="text" id="ciudad" placeholder="Ciudad" required>
+                        <input type="text" id="pais" placeholder="País" required>
+                        <input type="number" id="edad" placeholder="Edad" required>
+                        <input type="email" id="correo" placeholder="Correo electrónico" required>
+                        <input type="text" id="whatsapp" placeholder="WhatsApp" required>
+                        <button type="submit">Enviar y Ver Video</button>
                     </form>
                 </div>
                 <div class="video-container" id="ZOOM1" style="display: none;">
@@ -109,18 +49,18 @@
 
             <!-- Video 2 -->
             <div class="video-item">
-                <div class="miniatura" onclick="mostrarFormulario('videoReels1', 'miniatura2', 'REELS1')">
+                <div class="miniatura" onclick="mostrarFormulario('videoReels1', 'miniatura2', 'formulario2')">
                     <img id="miniatura2" src="icono reels.png" alt="Miniatura del tutorial de REELS 1">
                 </div>
-                <div class="form-container" id="formularioReels1">
-                    <form id="formReels1" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="enviarFormulario(event, 'formReels1', 'videoReels1', 'miniatura2', 'REELS1')">
-                        <input type="text" name="nombre" placeholder="Nombre completo" required>
-                        <input type="number" name="edad" placeholder="Edad" required>
-                        <input type="text" name="ciudad" placeholder="Ciudad" required>
-                        <input type="text" name="pais" placeholder="País" required>
-                        <input type="text" name="whatsapp" placeholder="WhatsApp" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" required>
-                        <button type="submit">Enviar y ver video</button>
+                <div class="form-container" id="formulario2">
+                    <form onsubmit="return enviarFormulario(event, 'videoReels1', 'formulario2')">
+                        <input type="text" id="nombre2" placeholder="Nombre completo" required>
+                        <input type="text" id="ciudad2" placeholder="Ciudad" required>
+                        <input type="text" id="pais2" placeholder="País" required>
+                        <input type="number" id="edad2" placeholder="Edad" required>
+                        <input type="email" id="correo2" placeholder="Correo electrónico" required>
+                        <input type="text" id="whatsapp2" placeholder="WhatsApp" required>
+                        <button type="submit">Enviar y Ver Video</button>
                     </form>
                 </div>
                 <div class="video-container" id="REELS1" style="display: none;">
@@ -133,18 +73,18 @@
 
             <!-- Video 3 -->
             <div class="video-item">
-                <div class="miniatura" onclick="mostrarFormulario('videoChatgpt1', 'miniatura3', 'Copilot1')">
+                <div class="miniatura" onclick="mostrarFormulario('videoChatgpt1', 'miniatura3', 'formulario3')">
                     <img id="miniatura3" src="enfrentados.png" alt="Miniatura del tutorial de CHATGPT 1">
                 </div>
-                <div class="form-container" id="formularioCopilot1">
-                    <form id="formCopilot1" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="enviarFormulario(event, 'formCopilot1', 'videoChatgpt1', 'miniatura3', 'Copilot1')">
-                        <input type="text" name="nombre" placeholder="Nombre completo" required>
-                        <input type="number" name="edad" placeholder="Edad" required>
-                        <input type="text" name="ciudad" placeholder="Ciudad" required>
-                        <input type="text" name="pais" placeholder="País" required>
-                        <input type="text" name="whatsapp" placeholder="WhatsApp" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" required>
-                        <button type="submit">Enviar y ver video</button>
+                <div class="form-container" id="formulario3">
+                    <form onsubmit="return enviarFormulario(event, 'videoChatgpt1', 'formulario3')">
+                        <input type="text" id="nombre3" placeholder="Nombre completo" required>
+                        <input type="text" id="ciudad3" placeholder="Ciudad" required>
+                        <input type="text" id="pais3" placeholder="País" required>
+                        <input type="number" id="edad3" placeholder="Edad" required>
+                        <input type="email" id="correo3" placeholder="Correo electrónico" required>
+                        <input type="text" id="whatsapp3" placeholder="WhatsApp" required>
+                        <button type="submit">Enviar y Ver Video</button>
                     </form>
                 </div>
                 <div class="video-container" id="Copilot1" style="display: none;">
@@ -155,28 +95,42 @@
                 </div>
             </div>
         </div>
-
-        <!-- Agregar más videos como el patrón mostrado -->
     </div>
 </section>
 
 <script>
-    function mostrarFormulario(videoId, miniaturaId, contenedorId) {
-        document.getElementById('formulario' + contenedorId).style.display = 'block';
+    function mostrarFormulario(videoId, miniaturaId, formularioId) {
+        document.getElementById(formularioId).style.display = 'block';
+        document.getElementById(miniaturaId).style.display = 'none';
     }
 
-    function enviarFormulario(event, formId, videoId, miniaturaId, contenedorId) {
-        event.preventDefault();
-        var form = document.getElementById(formId);
-        var formData = new FormData(form);
+    function enviarFormulario(event, videoId, formularioId) {
+        event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
 
-        // Aquí puedes agregar un código para enviar los datos a tu servidor o API si es necesario
+        // Simulación de envío del formulario por email (en un entorno real necesitarás una solución como Formspree o un backend)
+        var nombre = document.getElementById('nombre').value;
+        var ciudad = document.getElementById('ciudad').value;
+        var pais = document.getElementById('pais').value;
+        var edad = document.getElementById('edad').value;
+        var correo = document.getElementById('correo').value;
+        var whatsapp = document.getElementById('whatsapp').value;
 
-        // Una vez enviado el formulario, ocultamos el formulario y mostramos el video
-        document.getElementById('formulario' + contenedorId).style.display = 'none';
-        document.getElementById(videoId).style.display = 'block';
-        document.getElementById(miniaturaId).style.display = 'none';
+        var datos = {
+            nombre: nombre,
+            ciudad: ciudad,
+            pais: pais,
+            edad: edad,
+            correo: correo,
+            whatsapp: whatsapp
+        };
+
+        // Enviar datos al correo (esto es solo una simulación)
+        console.log("Formulario enviado con los datos:", datos);
+
+        // Ocultar el formulario y mostrar el video
+        document.getElementById(formularioId).style.display = 'none';
         document.getElementById(videoId).play();
+        document.getElementById(videoId).parentElement.style.display = 'block';
     }
 </script>
 
