@@ -10,12 +10,14 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten */
         }
 
         /* Estilo para cada video */
         .video-item {
-            width: 32%; /* 3 videos en cada fila, con un pequeño margen entre ellos */
+            width: 23%; /* 4 videos en cada fila, ajustando el ancho */
             margin-bottom: 15px;
+            margin-right: 2%; /* Espacio entre los videos */
         }
 
         /* Asegura que las miniaturas se ajusten bien */
@@ -36,6 +38,11 @@
         .video-item:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        /* Evitar que el último video tenga margen extra a la derecha */
+        .video-row .video-item:nth-child(4n) {
+            margin-right: 0;
+        }
     </style>
 </head>
 <body>
@@ -44,7 +51,7 @@
     <div class="tutorial">
         <h2>Tutoriales CapacitiumX</h2>
         
-        <!-- Contenedor para agrupar los videos en filas de tres -->
+        <!-- Contenedor para agrupar los videos en filas de cuatro -->
         <div class="video-row">
             <!-- Video 1 -->
             <div class="video-item">
@@ -84,10 +91,7 @@
                     </video>
                 </div>
             </div>
-        </div>
 
-        <!-- Otra fila de videos -->
-        <div class="video-row">
             <!-- Video 4 -->
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarVideo('videoZoom2', 'miniatura4', 'BORROSO2')">
@@ -100,7 +104,10 @@
                     </video>
                 </div>
             </div>
+        </div>
 
+        <!-- Otra fila de videos -->
+        <div class="video-row">
             <!-- Video 5 -->
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarVideo('videoPdf2', 'miniatura5', 'PDF2')">
@@ -126,10 +133,7 @@
                     </video>
                 </div>
             </div>
-        </div>
 
-        <!-- Otra fila de videos -->
-        <div class="video-row">
             <!-- Video 7 -->
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarVideo('videoModo4', 'miniatura7', 'MODO4')">
@@ -142,48 +146,49 @@
                     </video>
                 </div>
             </div>
-        </div>
-<div class="video-row">
+
             <!-- Video 8 -->
             <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videoModo4', 'miniatura7', 'podcast4')">
-                    <img id="miniatura7" src="podcast.png" alt="Miniatura del tutorial de MODOPRESENTACION 4">
+                <div class="miniatura" onclick="mostrarVideo('videoPodcast4', 'miniatura8', 'PODCAST4')">
+                    <img id="miniatura8" src="podcast.png" alt="Miniatura del tutorial de PODCAST 4">
                 </div>
-                <div class="video-container" id="podcast4" style="display: none;">
-                    <video id="videopodcast4" controls>
+                <div class="video-container" id="PODCAST4" style="display: none;">
+                    <video id="videoPodcast4" controls>
                         <source src="podcast.mp4" type="video/mp4">
                         Tu navegador no soporta la etiqueta de video.
                     </video>
                 </div>
             </div>
         </div>
-         <!-- Video 9 -->
+
+        <!-- Otra fila de videos -->
+        <div class="video-row">
+            <!-- Video 9 -->
             <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videoModo4', 'miniatura7', 'hotmart4')">
-                    <img id="miniatura7" src="icono hotmart.png" alt="Miniatura del tutorial de hotmart 4">
+                <div class="miniatura" onclick="mostrarVideo('videoHotmart4', 'miniatura9', 'HOTMART4')">
+                    <img id="miniatura9" src="icono hotmart.png" alt="Miniatura del tutorial de HOTMART 4">
                 </div>
-                <div class="video-container" id="hotmart4" style="display: none;">
-                    <video id="videohotmart4" controls>
+                <div class="video-container" id="HOTMART4" style="display: none;">
+                    <video id="videoHotmart4" controls>
                         <source src="hotmart.mp4" type="video/mp4">
                         Tu navegador no soporta la etiqueta de video.
                     </video>
                 </div>
             </div>
-        </div>
-        <!-- Video 10 -->
+
+            <!-- Video 10 -->
             <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videoexcel4', 'miniatura7', 'excel4')">
-                    <img id="miniatura7" src="icono excel.png" alt="Miniatura del tutorial de excel 4">
+                <div class="miniatura" onclick="mostrarVideo('videoExcel4', 'miniatura10', 'EXCEL4')">
+                    <img id="miniatura10" src="icono excel.png" alt="Miniatura del tutorial de EXCEL 4">
                 </div>
-                <div class="video-container" id="excel4" style="display: none;">
-                    <video id="videoexcel4" controls>
+                <div class="video-container" id="EXCEL4" style="display: none;">
+                    <video id="videoExcel4" controls>
                         <source src="excel.mp4" type="video/mp4">
                         Tu navegador no soporta la etiqueta de video.
                     </video>
                 </div>
             </div>
         </div>
-        
     </div>
 </section>
 
