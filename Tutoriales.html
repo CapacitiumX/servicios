@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutoriales CapacitiumX</title>
     <style>
+        /* Fondo rosa para toda la página */
+        body {
+            background-color: #f8bbd0; /* Tono de rosa claro */
+            font-family: Arial, sans-serif;
+        }
+
         /* Estilo para las filas de videos */
         .video-row {
             display: flex;
@@ -42,6 +48,13 @@
         /* Evitar que el último video tenga margen extra a la derecha */
         .video-row .video-item:nth-child(4n) {
             margin-right: 0;
+        }
+
+        /* Estilo para el título */
+        h2 {
+            text-align: center;
+            color: #e91e63; /* Color de texto rosa oscuro */
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -184,7 +197,7 @@
             </div>
 
             <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videovalidar4', 'miniatura11', 'validar4')">
+                <div class="miniatura" onclick="mostrarVideo('videoValidar4', 'miniatura11', 'validar4')">
                     <img id="miniatura11" src="validar.png" alt="Miniatura del tutorial de validar 4">
                 </div>
                 <div class="video-container" id="validar4" style="display: none;">
@@ -208,96 +221,8 @@
             </div>
         </div>
 
-        <!-- Fila de videos (13-16) -->
+        <!-- Video 20 -->
         <div class="video-row">
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videoedita4', 'miniatura13', 'edita4')">
-                    <img id="miniatura13" src="edita.png" alt="Miniatura del tutorial de edita 4">
-                </div>
-                <div class="video-container" id="edita4" style="display: none;">
-                    <video id="videoedita4" controls>
-                        <source src="edita.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
-
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videoedita4', 'miniatura14', 'word4')">
-                    <img id="miniatura14" src="word.png" alt="Miniatura del tutorial de word 4">
-                </div>
-                <div class="video-container" id="word4" style="display: none;">
-                    <video id="videoedita4" controls>
-                        <source src="word.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
-
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videominiaturas4', 'miniatura15', 'miniaturas4')">
-                    <img id="miniatura15" src="miniaturas.png" alt="Miniatura del tutorial de miniaturas 4">
-                </div>
-                <div class="video-container" id="miniaturas4" style="display: none;">
-                    <video id="videoedita4" controls>
-                        <source src="icono miniaturas.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
-
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videocanva4', 'miniatura16', 'canva4')">
-                    <img id="miniatura16" src="canva.png" alt="Miniatura del tutorial de canva 4">
-                </div>
-                <div class="video-container" id="canva4" style="display: none;">
-                    <video id="videoedita4" controls>
-                        <source src="canva.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fila de videos (17-19) -->
-        <div class="video-row">
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videocanva4', 'miniatura17', 'github4')">
-                    <img id="miniatura17" src="github.png" alt="Miniatura del tutorial de github 4">
-                </div>
-                <div class="video-container" id="github4" style="display: none;">
-                    <video id="videogithub4" controls>
-                        <source src="github.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
-
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videocapcut4', 'miniatura18', 'capcut4')">
-                    <img id="miniatura18" src="capcut.png" alt="Miniatura del tutorial de capcut4">
-                </div>
-                <div class="video-container" id="capcut4" style="display: none;">
-                    <video id="videocapcut4" controls>
-                        <source src="capcut.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
-
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videodicta4', 'miniatura19', 'dicta4')">
-                    <img id="miniatura19" src="dicta.png" alt="Miniatura del tutorial de dicta4">
-                </div>
-                <div class="video-container" id="dicta4" style="display: none;">
-                    <video id="videodicta4" controls>
-                        <source src="dicta.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
-
-            <!-- Video 20 -->
             <div class="video-item">
                 <div class="miniatura" onclick="mostrarVideo('videoprompts', 'miniatura20', 'prompts')">
                     <img id="miniatura20" src="prompts.png" alt="Miniatura del tutorial de prompts">
@@ -336,5 +261,3 @@
 
 </body>
 </html>
-
-        
