@@ -22,11 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $headers = "From: no-reply@capacitiumx.com";
 
     // Enviar el correo
-    if (mail($to, $subject, $message, $headers)) {
-        echo "<script>alert('Formulario enviado correctamente. Ahora puede ver el video.');</script>";
-    } else {
-        echo "<script>alert('Error al enviar el formulario. Por favor, inténtelo nuevamente.');</script>";
-    }
+    $mail_sent = mail($to, $subject, $message, $headers);
 }
 ?>
 
@@ -138,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="formulario" id="formulario1" style="display: none;">
                     <h3>Formulario para ZOOM 1</h3>
-                    <form action="" method="POST" onsubmit="return enviarFormulario(event, 'videoZoom1', 'formulario1')">
+                    <form action="" method="POST" id="form1" onsubmit="return enviarFormulario(event, 'videoZoom1', 'formulario1')">
                         <input type="text" name="nombre" placeholder="Nombre Completo" required>
                         <input type="text" name="ciudad" placeholder="Ciudad" required>
                         <input type="text" name="pais" placeholder="País" required>
@@ -157,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="formulario" id="formulario2" style="display: none;">
                     <h3>Formulario para REELS 1</h3>
-                    <form action="" method="POST" onsubmit="return enviarFormulario(event, 'videoReels1', 'formulario2')">
+                    <form action="" method="POST" id="form2" onsubmit="return enviarFormulario(event, 'videoReels1', 'formulario2')">
                         <input type="text" name="nombre" placeholder="Nombre Completo" required>
                         <input type="text" name="ciudad" placeholder="Ciudad" required>
                         <input type="text" name="pais" placeholder="País" required>
@@ -176,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="formulario" id="formulario3" style="display: none;">
                     <h3>Formulario para CHATGPT 1</h3>
-                    <form action="" method="POST" onsubmit="return enviarFormulario(event, 'videoChatgpt1', 'formulario3')">
+                    <form action="" method="POST" id="form3" onsubmit="return enviarFormulario(event, 'videoChatgpt1', 'formulario3')">
                         <input type="text" name="nombre" placeholder="Nombre Completo" required>
                         <input type="text" name="ciudad" placeholder="Ciudad" required>
                         <input type="text" name="pais" placeholder="País" required>
@@ -208,12 +204,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     function enviarFormulario(event, videoId, formularioId) {
         event.preventDefault(); // Prevenir el envío por defecto del formulario
 
+        // Obtener el formulario y los datos
         var formulario = document.getElementById(formularioId);
-        var video = document.getElementById(videoId);
+        var formData = new FormData(formulario);
 
-        // Enviar el formulario
-        formulario.style.display = 'none';
-        video.play();
+        // Enviar los datos del formulario por AJAX
+        fetch('', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Si el formulario se envió correctamente, reproducir el video
+                document.getElementById(videoId).play();
+                // Ocultar el formulario
+                formulario.style.display = 'none';
+                alert('Formulario enviado correctamente. Ahora puede ver el video.');
+            } else {
+                alert('Error al enviar el formulario. Por favor, inténtelo nuevamente.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Hubo un error en la solicitud. Intente nuevamente.');
+        });
+
+        return false; // Para evitar recargar la página
     }
 </script>
 
