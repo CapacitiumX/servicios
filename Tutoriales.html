@@ -1,121 +1,737 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutoriales CapacitiumX</title>
-    <style>
-        /* Fondo rosa para toda la página */
-        body {
-            background-color: #f8bbd0; /* Tono de rosa claro */
-            font-family: Arial, sans-serif;
-        }
+<!DOCTYPE html> 
 
-        /* Estilo para el título */
-        h2 {
-            text-align: center;
-            color: #e91e63; /* Color de texto rosa oscuro */
-            margin-top: 20px;
-        }
+<html lang="es"> 
 
-        /* Estilo para el contenedor del formulario */
-        .form-container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+<head> 
 
-        iframe {
-            width: 100%;
-            height: 800px;
-            border: none;
-        }
+    <meta charset="UTF-8"> 
 
-        /* Estilo para las filas de videos */
-        .video-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            flex-wrap: wrap; /* Permite que los elementos se ajusten */
-        }
-    </style>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-<section class="tutoriales">
-    <div class="tutorial">
-        <h2>Tutoriales CapacitiumX</h2>
+    <title>Tutoriales CapacitiumX</title> 
 
-        <!-- Formulario de Google Forms incrustado -->
-        <div class="form-container">
-            <h3>Formulario de Registro</h3>
-            <iframe src="https://forms.office.com/r/y9pcaX0bWb" title="Formulario de Registro"></iframe>
-        </div>
+    <style> 
 
-        <!-- Fila de videos (1-3) -->
-        <div class="video-row">
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videoZoom1', 'miniatura1', 'ZOOM1')">
-                    <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
-                </div>
-                <div class="video-container" id="ZOOM1" style="display: none;">
-                    <video id="videoZoom1" controls>
-                        <source src="zoom.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
+        /* Fondo rosa para toda la página */ 
 
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videoReels1', 'miniatura2', 'REELS1')">
-                    <img id="miniatura2" src="icono reels.png" alt="Miniatura del tutorial de REELS 1">
-                </div>
-                <div class="video-container" id="REELS1" style="display: none;">
-                    <video id="videoReels1" controls>
-                        <source src="reels.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
+        body { 
 
-            <div class="video-item">
-                <div class="miniatura" onclick="mostrarVideo('videoChatgpt1', 'miniatura3', 'Copilot1')">
-                    <img id="miniatura3" src="enfrentados.png" alt="Miniatura del tutorial de CHATGPT 1">
-                </div>
-                <div class="video-container" id="Copilot1" style="display: none;">
-                    <video id="videoChatgpt1" controls>
-                        <source src="enfrentados.mp4" type="video/mp4">
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
-                </div>
-            </div>
-        </div>
+            background-color: #f8bbd0; /* Tono de rosa claro */ 
 
-        <!-- Aquí seguirían el resto de tus videos, similar a lo anterior -->
-    </div>
-</section>
+            font-family: Arial, sans-serif; 
 
-<script>
-    function mostrarVideo(videoId, miniaturaId, contenedorId) {
-        var video = document.getElementById(videoId);
-        var miniatura = document.getElementById(miniaturaId);
-        var contenedor = document.getElementById(contenedorId);
+        } 
 
-        // Alternar visibilidad
-        if (contenedor.style.display === "none") {
-            contenedor.style.display = "block";
-            video.play();
-            miniatura.style.display = "none";
-        } else {
-            contenedor.style.display = "none";
-            video.pause();
-            miniatura.style.display = "block";
-        }
-    }
-</script>
+  
 
-</body>
-</html>
+        /* Estilo para las filas de videos */ 
+
+        .video-row { 
+
+            display: flex; 
+
+            justify-content: space-between; 
+
+            margin-bottom: 20px; 
+
+            flex-wrap: wrap; /* Permite que los elementos se ajusten */ 
+
+        } 
+
+  
+
+        /* Estilo para cada video */ 
+
+        .video-item { 
+
+            width: 30%; /* 3 videos por fila */ 
+
+            margin-bottom: 15px; 
+
+        } 
+
+  
+
+        /* Estilo para las miniaturas */ 
+
+        .miniatura img { 
+
+            width: 100%; 
+
+            height: auto; 
+
+            cursor: pointer; 
+
+        } 
+
+  
+
+        /* Estilo opcional: Añadir un borde o sombreado a los videos */ 
+
+        .video-item { 
+
+            border: 1px solid #ddd; 
+
+            padding: 10px; 
+
+            border-radius: 8px; 
+
+            background-color: #f9f9f9; 
+
+        } 
+
+  
+
+        .video-item:hover { 
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+        } 
+
+  
+
+        /* Estilo para el título */ 
+
+        h2 { 
+
+            text-align: center; 
+
+            color: #e91e63; /* Color de texto rosa oscuro */ 
+
+            margin-top: 20px; 
+
+        } 
+
+  
+
+        /* Ajuste de tamaño para los videos */ 
+
+        video { 
+
+            width: 100%; 
+
+            height: 200px; /* Ajustamos la altura de todos los videos para que sean uniformes */ 
+
+            object-fit: cover; /* Mantiene la proporción sin distorsionar */ 
+
+        } 
+
+    </style> 
+
+</head> 
+
+<body> 
+
+  
+
+<section class="tutoriales"> 
+
+    <div class="tutorial"> 
+
+        <h2>Tutoriales CapacitiumX</h2> 
+
+  <!-- Formulario de suscripción -->
+<div class="form-container">
+    <h3>Suscríbete a nuestro boletín</h3>
+    <form action="https://example.com/submit-form" method="post">
+        <input type="email" name="email" placeholder="Introduce tu correo electrónico" required>
+        <button type="submit">Suscribirme</button>
+    </form>
+</div>
+
+
+        <!-- Fila de videos (1-3) --> 
+
+        <div class="video-row"> 
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoZoom1', 'miniatura1', 'ZOOM1')"> 
+
+                    <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1"> 
+
+                </div> 
+
+                <div class="video-container" id="ZOOM1" style="display: none;"> 
+
+                    <video id="videoZoom1" controls> 
+
+                        <source src="zoom.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoReels1', 'miniatura2', 'REELS1')"> 
+
+                    <img id="miniatura2" src="icono reels.png" alt="Miniatura del tutorial de REELS 1"> 
+
+                </div> 
+
+                <div class="video-container" id="REELS1" style="display: none;"> 
+
+                    <video id="videoReels1" controls> 
+
+                        <source src="reels.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoChatgpt1', 'miniatura3', 'Copilot1')"> 
+
+                    <img id="miniatura3" src="enfrentados.png" alt="Miniatura del tutorial de CHATGPT 1"> 
+
+                </div> 
+
+                <div class="video-container" id="Copilot1" style="display: none;"> 
+
+                    <video id="videoChatgpt1" controls> 
+
+                        <source src="enfrentados.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+  
+
+        <!-- Fila de videos (4-6) --> 
+
+        <div class="video-row"> 
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoBorroso2', 'miniatura4', 'BORROSO2')"> 
+
+                    <img id="miniatura4" src="icono borroso.png" alt="Miniatura del tutorial de BORROSO 2"> 
+
+                </div> 
+
+                <div class="video-container" id="BORROSO2" style="display: none;"> 
+
+                    <video id="videoBorroso2" controls> 
+
+                        <source src="borroso.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoPdf2', 'miniatura5', 'PDF2')"> 
+
+                    <img id="miniatura5" src="icono pdf.png" alt="Miniatura del tutorial de PDFO 2"> 
+
+                </div> 
+
+                <div class="video-container" id="PDF2" style="display: none;"> 
+
+                    <video id="videoPdf2" controls> 
+
+                        <source src="pdf.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoOffice3', 'miniatura6', 'OFFICE3')"> 
+
+                    <img id="miniatura6" src="icono office.png" alt="Miniatura del tutorial de OFFICE 3"> 
+
+                </div> 
+
+                <div class="video-container" id="OFFICE3" style="display: none;"> 
+
+                    <video id="videoOffice3" controls> 
+
+                        <source src="office.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+  
+
+        <!-- Fila de videos (7-9) --> 
+
+        <div class="video-row"> 
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoModo4', 'miniatura7', 'MODO4')"> 
+
+                    <img id="miniatura7" src="icono modopresentacion.png" alt="Miniatura del tutorial de MODOPRESENTACION 4"> 
+
+                </div> 
+
+                <div class="video-container" id="MODO4" style="display: none;"> 
+
+                    <video id="videoModo4" controls> 
+
+                        <source src="modopresentacion.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoPodcast4', 'miniatura8', 'PODCAST4')"> 
+
+                    <img id="miniatura8" src="podcast.png" alt="Miniatura del tutorial de PODCAST 4"> 
+
+                </div> 
+
+                <div class="video-container" id="PODCAST4" style="display: none;"> 
+
+                    <video id="videoPodcast4" controls> 
+
+                        <source src="podcast.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoHotmart4', 'miniatura9', 'HOTMART4')"> 
+
+                    <img id="miniatura9" src="icono hotmart.png" alt="Miniatura del tutorial de HOTMART 4"> 
+
+                </div> 
+
+                <div class="video-container" id="HOTMART4" style="display: none;"> 
+
+                    <video id="videoHotmart4" controls> 
+
+                        <source src="hotmart.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+  
+
+        <!-- Fila de videos (10-12) --> 
+
+        <div class="video-row"> 
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoExcel4', 'miniatura10', 'EXCEL4')"> 
+
+                    <img id="miniatura10" src="icono excel.png" alt="Miniatura del tutorial de EXCEL 4"> 
+
+                </div> 
+
+                <div class="video-container" id="EXCEL4" style="display: none;"> 
+
+                    <video id="videoExcel4" controls> 
+
+                        <source src="excel.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoValidar4', 'miniatura11', 'VALIDAR4')"> 
+
+                    <img id="miniatura11" src="validar.png" alt="Miniatura del tutorial de VALIDAR 4"> 
+
+                </div> 
+
+                <div class="video-container" id="VALIDAR4" style="display: none;"> 
+
+                    <video id="videoValidar4" controls> 
+
+                        <source src="validar.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoIngles4', 'miniatura12', 'INGLES4')"> 
+
+                    <img id="miniatura12" src="ingles.png" alt="Miniatura del tutorial de INGLES 4"> 
+
+                </div> 
+
+                <div class="video-container" id="INGLES4" style="display: none;"> 
+
+                    <video id="videoIngles4" controls> 
+
+                        <source src="ingles.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+  
+
+        <!-- Fila de videos (13-15) --> 
+
+        <div class="video-row"> 
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoDicta', 'miniatura13', 'DICTA')"> 
+
+                    <img id="miniatura13" src="dicta.png" alt="Miniatura del tutorial de DICTA"> 
+
+                </div> 
+
+                <div class="video-container" id="DICTA" style="display: none;"> 
+
+                    <video id="videoDicta" controls> 
+
+                        <source src="dicta.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoCanva', 'miniatura14', 'CANVA')"> 
+
+                    <img id="miniatura14" src="canva.png" alt="Miniatura del tutorial de CANVA"> 
+
+                </div> 
+
+                <div class="video-container" id="CANVA" style="display: none;"> 
+
+                    <video id="videoCanva" controls> 
+
+                        <source src="canva.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoEdita', 'miniatura15', 'EDITA')"> 
+
+                    <img id="miniatura15" src="edita.png" alt="Miniatura del tutorial de EDITA"> 
+
+                </div> 
+
+                <div class="video-container" id="EDITA" style="display: none;"> 
+
+                    <video id="videoEdita" controls> 
+
+                        <source src="edita.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+  
+
+        <!-- Fila de videos (16-18) --> 
+
+        <div class="video-row"> 
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoCapcut', 'miniatura16', 'CAPCUT')"> 
+
+                    <img id="miniatura16" src="capcut.png" alt="Miniatura del tutorial de CAPCUT"> 
+
+                </div> 
+
+                <div class="video-container" id="CAPCUT" style="display: none;"> 
+
+                    <video id="videoCapcut" controls> 
+
+                        <source src="capcut.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoWord', 'miniatura17', 'WORD')"> 
+
+                    <img id="miniatura17" src="word.png" alt="Miniatura del tutorial de WORD"> 
+
+                </div> 
+
+                <div class="video-container" id="WORD" style="display: none;"> 
+
+                    <video id="videoWord" controls> 
+
+                        <source src="word.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoGithub', 'miniatura18', 'GITHUB')"> 
+
+                    <img id="miniatura18" src="github.png" alt="Miniatura del tutorial de GITHUB"> 
+
+                </div> 
+
+                <div class="video-container" id="GITHUB" style="display: none;"> 
+
+                    <video id="videoGithub" controls> 
+
+                        <source src="github.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+  
+
+        <!-- Fila de videos (19-21) --> 
+
+        <div class="video-row"> 
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoMiniaturas', 'miniatura19', 'MINIATURAS')"> 
+
+                    <img id="miniatura19" src="miniaturas.png" alt="Miniatura del tutorial de MINIATURAS"> 
+
+                </div> 
+
+                <div class="video-container" id="MINIATURAS" style="display: none;"> 
+
+                    <video id="videoMiniaturas" controls> 
+
+                        <source src="icono miniaturas.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoPrompts', 'miniatura20', 'PROMPTS')"> 
+
+                    <img id="miniatura20" src="prompts.png" alt="Miniatura del tutorial de PROMPTS"> 
+
+                </div> 
+
+                <div class="video-container" id="PROMPTS" style="display: none;"> 
+
+                    <video id="videoPrompts" controls> 
+
+                        <source src="prompts.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+  
+
+            <div class="video-item"> 
+
+                <div class="miniatura" onclick="mostrarVideo('videoGoconqr', 'miniatura21', 'GOCONQR')"> 
+
+                    <img id="miniatura21" src="goconqr.png" alt="Miniatura del tutorial de GOCONQR"> 
+
+                </div> 
+
+                <div class="video-container" id="GOCONQR" style="display: none;"> 
+
+                    <video id="videoGoconqr" controls> 
+
+                        <source src="goconqr.mp4" type="video/mp4"> 
+
+                        Tu navegador no soporta la etiqueta de video. 
+
+                    </video> 
+
+                </div> 
+
+            </div> 
+
+        </div> 
+
+  
+
+    </div> 
+
+</section> 
+
+  
+
+<script> 
+
+    function mostrarVideo(videoId, miniaturaId, contenedorId) { 
+
+        var video = document.getElementById(videoId); 
+
+        var miniatura = document.getElementById(miniaturaId); 
+
+        var contenedor = document.getElementById(contenedorId); 
+
+  
+
+        // Alternar visibilidad 
+
+        if (contenedor.style.display === "none") { 
+
+            contenedor.style.display = "block"; 
+
+            video.play(); 
+
+            miniatura.style.display = "none"; 
+
+        } else { 
+
+            contenedor.style.display = "none"; 
+
+            video.pause(); 
+
+            miniatura.style.display = "block"; 
+
+        } 
+
+    } 
+
+</script> 
+
+  
+
+</body> 
+
+</html> 
+
+ 
