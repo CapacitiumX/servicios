@@ -23,6 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Enviar el correo
     $mail_sent = mail($to, $subject, $message, $headers);
+
+    // Determinamos si fue exitoso
+    if ($mail_sent) {
+        $success_message = "Formulario enviado correctamente. Ahora puedes ver el video.";
+    } else {
+        $error_message = "Hubo un problema enviando el formulario. Intenta de nuevo.";
+    }
 }
 ?>
 
@@ -117,6 +124,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .formulario button:hover {
             background-color: #c2185b;
         }
+
+        /* Mensajes de éxito y error */
+        .mensaje {
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .mensaje.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .mensaje.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
     </style>
 </head>
 <body>
@@ -124,6 +148,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <section class="tutoriales">
     <div class="tutorial">
         <h2>Tutoriales CapacitiumX</h2>
+
+        <!-- Mostrar mensaje de éxito o error -->
+        <?php if (isset($success_message)): ?>
+            <div class="mensaje success">
+                <?php echo $success_message; ?>
+            </div>
+        <?php elseif (isset($error_message)): ?>
+            <div class="mensaje error">
+                <?php echo $error_message; ?>
+            </div>
+        <?php endif; ?>
 
         <!-- Fila de videos (1-3) -->
         <div class="video-row">
@@ -134,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="formulario" id="formulario1" style="display: none;">
                     <h3>Formulario para ZOOM 1</h3>
-                    <form action="" method="POST" id="form1" onsubmit="return enviarFormulario(event, 'videoZoom1', 'formulario1')">
+                    <form action="" method="POST">
                         <input type="text" name="nombre" placeholder="Nombre Completo" required>
                         <input type="text" name="ciudad" placeholder="Ciudad" required>
                         <input type="text" name="pais" placeholder="País" required>
@@ -153,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="formulario" id="formulario2" style="display: none;">
                     <h3>Formulario para REELS 1</h3>
-                    <form action="" method="POST" id="form2" onsubmit="return enviarFormulario(event, 'videoReels1', 'formulario2')">
+                    <form action="" method="POST">
                         <input type="text" name="nombre" placeholder="Nombre Completo" required>
                         <input type="text" name="ciudad" placeholder="Ciudad" required>
                         <input type="text" name="pais" placeholder="País" required>
@@ -172,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="formulario" id="formulario3" style="display: none;">
                     <h3>Formulario para CHATGPT 1</h3>
-                    <form action="" method="POST" id="form3" onsubmit="return enviarFormulario(event, 'videoChatgpt1', 'formulario3')">
+                    <form action="" method="POST">
                         <input type="text" name="nombre" placeholder="Nombre Completo" required>
                         <input type="text" name="ciudad" placeholder="Ciudad" required>
                         <input type="text" name="pais" placeholder="País" required>
@@ -185,53 +220,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
+        <script>
+            // Función para mostrar el formulario cuando se hace clic en la miniatura
+            function mostrarFormulario(videoId, formularioId) {
+                // Ocultar todos los formularios
+                const formularios = document.querySelectorAll('.formulario');
+                formularios.forEach(function(formulario) {
+                    formulario.style.display = 'none';
+                });
+
+                // Mostrar el formulario correspondiente
+                const formulario = document.getElementById(formularioId);
+                formulario.style.display = 'block';
+            }
+        </script>
+
     </div>
 </section>
-
-<script>
-    function mostrarFormulario(videoId, formularioId) {
-        // Ocultar otros formularios
-        var formularios = document.querySelectorAll('.formulario');
-        formularios.forEach(function (form) {
-            form.style.display = 'none';
-        });
-
-        // Mostrar el formulario correspondiente
-        var formulario = document.getElementById(formularioId);
-        formulario.style.display = 'block';
-    }
-
-    function enviarFormulario(event, videoId, formularioId) {
-        event.preventDefault(); // Prevenir el envío por defecto del formulario
-
-        // Obtener el formulario y los datos
-        var formulario = document.getElementById(formularioId);
-        var formData = new FormData(formulario);
-
-        // Enviar los datos del formulario por AJAX
-        fetch('', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                // Si el formulario se envió correctamente, reproducir el video
-                document.getElementById(videoId).play();
-                // Ocultar el formulario
-                formulario.style.display = 'none';
-                alert('Formulario enviado correctamente. Ahora puede ver el video.');
-            } else {
-                alert('Error al enviar el formulario. Por favor, inténtelo nuevamente.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Hubo un error en la solicitud. Intente nuevamente.');
-        });
-
-        return false; // Para evitar recargar la página
-    }
-</script>
 
 </body>
 </html>
