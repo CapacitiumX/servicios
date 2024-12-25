@@ -3,257 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CapacitiumX - Tutoriales</title>
+    <title>Tutoriales CapacitiumX</title>
     <style>
-        /* Reset de márgenes y padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Estilo para las filas de videos */
+        .video-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #002D62;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 3em;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-
-        .tutoriales {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .tutorial {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-        }
-
-        .tutorial h2 {
-            font-size: 1.8em;
-            color: #002D62;
-            margin-bottom: 10px;
-        }
-
-        .miniatura {
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: 8px;
+        /* Estilo para cada video */
+        .video-item {
+            width: 32%; /* 3 videos en cada fila, con un pequeño margen entre ellos */
             margin-bottom: 15px;
         }
 
+        /* Asegura que las miniaturas se ajusten bien */
         .miniatura img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
         }
 
-        .miniatura:hover img {
-            transform: scale(1.05);
-        }
-
-        .descripcion {
-            font-size: 1em;
-            color: #555;
-        }
-
-        .video-container {
-            display: none; /* Inicialmente oculto */
-            position: relative;
-            padding-bottom: 56.25%; /* Mantener relación 16:9 */
-            height: 0;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        footer {
-            text-align: center;
-            background-color: #002D62;
-            color: #fff;
+        /* Estilo opcional: Añadir un borde o sombreado a los videos */
+        .video-item {
+            border: 1px solid #ddd;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
         }
 
-        footer p {
-            font-size: 1em;
+        .video-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>CapacitiumX - Tutoriales</h1>
-        <p>Aprende a tu ritmo con nuestros tutoriales</p>
-    </header>
 <section class="tutoriales">
     <div class="tutorial">
         <h2>Tutoriales CapacitiumX</h2>
         
-        <!-- Miniaturas y videos -->
-        <div class="video-item">
-            <!-- Miniatura del video 1 -->
-            <div class="miniatura" onclick="mostrarVideo('videoZoom1', 'miniatura1', 'ZOOM1')">
-                <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
+        <!-- Contenedor para agrupar los videos en filas de tres -->
+        <div class="video-row">
+            <!-- Video 1 -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoZoom1', 'miniatura1', 'ZOOM1')">
+                    <img id="miniatura1" src="icono zoom.png" alt="Miniatura del tutorial de ZOOM 1">
+                </div>
+                <div class="video-container" id="ZOOM1" style="display: none;">
+                    <video id="videoZoom1" controls>
+                        <source src="zoom.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
             </div>
 
-            <!-- Contenedor del video 1, inicialmente oculto -->
-            <div class="video-container" id="ZOOM1" style="display: none;">
-                <video id="videoZoom1" controls>
-                    <source src="zoom.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video.
-                </video>
-            </div>
-        </div>
-
-        <div class="video-item">
-            <!-- Miniatura del video 1 -->
-            <div class="miniatura" onclick="mostrarVideo('videoReels1', 'miniatura1', 'REELS1')">
-                <img id="miniatura1" src="icono reels.png" alt="Miniatura del tutorial de REELS 1">
+            <!-- Video 2 -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoReels1', 'miniatura2', 'REELS1')">
+                    <img id="miniatura2" src="icono reels.png" alt="Miniatura del tutorial de REELS 1">
+                </div>
+                <div class="video-container" id="REELS1" style="display: none;">
+                    <video id="videoReels1" controls>
+                        <source src="reels.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
             </div>
 
-            <!-- Contenedor del video 1, inicialmente oculto -->
-            <div class="video-container" id="REELS1" style="display: none;">
-                <video id="videoReels1" controls>
-                    <source src="reels.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video.
-                </video>
-            </div>
-        </div>
-
-        <!-- Miniatura y video del Copilot -->
-        <div class="video-item">
-            <!-- Miniatura del video de Copilot -->
-            <div class="miniatura" onclick="mostrarVideo('videoChatgpt1', 'miniatura5', 'Copilot1')">
-                <img id="miniatura5" src="icono chatgpt.png" alt="Miniatura del tutorial de CHATGPT 1">
-            </div>
-
-            <!-- Contenedor del video de Copilot, inicialmente oculto -->
-            <div class="video-container" id="Copilot1" style="display: none;">
-                <video id="videoChatgpt1" controls>
-                    <source src="copiloto.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video.
-                </video>
+            <!-- Video 3 -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoChatgpt1', 'miniatura3', 'Copilot1')">
+                    <img id="miniatura3" src="icono chatgpt.png" alt="Miniatura del tutorial de CHATGPT 1">
+                </div>
+                <div class="video-container" id="Copilot1" style="display: none;">
+                    <video id="videoChatgpt1" controls>
+                        <source src="copiloto.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
             </div>
         </div>
 
-        <div class="video-item">
-            <!-- Miniatura del video 2 -->
-            <div class="miniatura" onclick="mostrarVideo('videoZoom2', 'miniatura2', 'BORROSO2')">
-                <img id="miniatura2" src="icono borroso.png" alt="Miniatura del tutorial de BORROSO 2">
+        <!-- Otra fila de videos -->
+        <div class="video-row">
+            <!-- Video 4 -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoZoom2', 'miniatura4', 'BORROSO2')">
+                    <img id="miniatura4" src="icono borroso.png" alt="Miniatura del tutorial de BORROSO 2">
+                </div>
+                <div class="video-container" id="BORROSO2" style="display: none;">
+                    <video id="videoBorroso2" controls>
+                        <source src="borroso.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
             </div>
 
-            <!-- Contenedor del video 2, inicialmente oculto -->
-            <div class="video-container" id="BORROSO2" style="display: none;">
-                <video id="videoBorroso2" controls>
-                    <source src="borroso.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video.
-                </video>
-            </div>
-        </div>
-
-         <div class="video-item">
-            <!-- Miniatura del video 2 -->
-            <div class="miniatura" onclick="mostrarVideo('videoPdf2', 'miniatura2', 'PDF2')">
-                <img id="miniatura2" src="icono pdf.png" alt="Miniatura del tutorial de PDFO 2">
+            <!-- Video 5 -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoPdf2', 'miniatura5', 'PDF2')">
+                    <img id="miniatura5" src="icono pdf.png" alt="Miniatura del tutorial de PDFO 2">
+                </div>
+                <div class="video-container" id="PDF2" style="display: none;">
+                    <video id="videoPdf2" controls>
+                        <source src="pdf.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
             </div>
 
-            <!-- Contenedor del video 2, inicialmente oculto -->
-            <div class="video-container" id="PDF2" style="display: none;">
-                <video id="videoPdf2" controls>
-                    <source src="pdf.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video.
-                </video>
-            </div>
-        </div>
-
-
-        <div class="video-item">
-            <!-- Miniatura del video 3 -->
-            <div class="miniatura" onclick="mostrarVideo('videoZoom3', 'miniatura3', 'OFFICE3')">
-                <img id="miniatura3" src="icono office.png" alt="Miniatura del tutorial de OFFICE 3">
-            </div>
-
-            <!-- Contenedor del video 3, inicialmente oculto -->
-            <div class="video-container" id="OFFICE3" style="display: none;">
-                <video id="videoOffice3" controls>
-                    <source src="office.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video.
-                </video>
+            <!-- Video 6 -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoZoom3', 'miniatura6', 'OFFICE3')">
+                    <img id="miniatura6" src="icono office.png" alt="Miniatura del tutorial de OFFICE 3">
+                </div>
+                <div class="video-container" id="OFFICE3" style="display: none;">
+                    <video id="videoOffice3" controls>
+                        <source src="office.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
             </div>
         </div>
 
-        <div class="video-item">
-            <!-- Miniatura del video 4 -->
-            <div class="miniatura" onclick="mostrarVideo('videoModo4', 'miniatura4', 'MODO4')">
-                <img id="miniatura4" src="icono modopresentacion.png" alt="Miniatura del tutorial de MODOPRESENTACION 4">
-            </div>
-
-            <!-- Contenedor del video 4, inicialmente oculto -->
-            <div class="video-container" id="MODO4" style="display: none;">
-                <video id="videoModo4" controls>
-                    <source src="modopresentacion.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de video.
-                </video>
+        <!-- Otra fila de videos -->
+        <div class="video-row">
+            <!-- Video 7 -->
+            <div class="video-item">
+                <div class="miniatura" onclick="mostrarVideo('videoModo4', 'miniatura7', 'MODO4')">
+                    <img id="miniatura7" src="icono modopresentacion.png" alt="Miniatura del tutorial de MODOPRESENTACION 4">
+                </div>
+                <div class="video-container" id="MODO4" style="display: none;">
+                    <video id="videoModo4" controls>
+                        <source src="modopresentacion.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
             </div>
         </div>
-
     </div>
 </section>
 
-
-    <footer>
-        <p>&copy; 2024 CapacitiumX. Monterrey, Nuevo León, México. Todos los derechos reservados.</p>
-    </footer>
 <script>
+    // Función para mostrar y ocultar los videos
     function mostrarVideo(videoId, miniaturaId, contenedorId) {
-        // Ocultar la miniatura correspondiente
-        document.getElementById(miniaturaId).style.display = 'none';
-
-        // Mostrar el contenedor del video correspondiente
-        document.getElementById(contenedorId).style.display = 'block';
-
-        // Obtener el video y reproducirlo
         var video = document.getElementById(videoId);
-        video.play();  // Reproducir el video
+        var miniatura = document.getElementById(miniaturaId);
+        var contenedor = document.getElementById(contenedorId);
+        
+        // Alternar visibilidad
+        if (contenedor.style.display === 'none') {
+            contenedor.style.display = 'block';
+            video.play();
+            miniatura.style.display = 'none';
+        } else {
+            contenedor.style.display = 'none';
+            video.pause();
+            video.currentTime = 0;
+            miniatura.style.display = 'block';
+        }
     }
 </script>
 
 </body>
 </html>
-
- 
-
